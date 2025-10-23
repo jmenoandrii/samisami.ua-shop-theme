@@ -13,7 +13,7 @@
 
 {block name='header_nav'}
   <nav class="{$headerTopName}">
-    <div class="container-md">
+    <div class="sami-container {$headerTopName}__container">
       <div class="{$headerTopName}-desktop d-none d-md-flex row">
         <div class="{$headerTopName}__left col-md-5">
           {hook h='displayNav1'}
@@ -29,9 +29,9 @@
 
 {block name='header_bottom'}
   <div class="{$headerBottomName}">
-    <div class="container-md {$headerBottomName}__container">
+    <div class="sami-container {$headerBottomName}__container">
       <div class="row gx-2 align-items-stretch {$headerBottomName}__row">
-        <div class="d-flex align-items-center col-auto logo order-xl-1 ms-lg-0 ms-2 me-lg-0 me-auto">
+        <div class="d-flex align-items-center col-auto logo ms-lg-0 ms-2 me-lg-0 me-auto">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}<h1 class="{$headerBottomName}__h1 mb-0">{/if}
               {renderLogo}
@@ -55,29 +55,33 @@
           </div>
         </div>
 
-        {hook h='displayTop'}
+        {hook h='displayTopSearch'}
 
-        <div id="_mobile_user_info" class="d-md-none d-flex col-auto">
-          {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
+    
+        <a href="{$urls.pages.my_account}" id="user_info" class="col-auto d-flex {if $urls.current_url === $urls.pages.my_account} active{/if}">
           <div class="header-block">
             <span class="header-block__action-btn">
               <i class="material-icons header-block__icon" aria-hidden="true">&#xE7FD;</i>
-              <span class="d-none d-md-inline header-block__title">{l s='Sign in' d='Shop.Theme.Actions'}</span>
             </span>
           </div>
-          {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
-        </div>
+        </a>
 
-        <div id="_mobile_cart" class="d-md-none col-auto d-flex">
-          {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
+        <a href="{$link->getModuleLink('blockwishlist', 'lists', array(), true)|escape:'html':'UTF-8'}" id="wishlist" class="col-auto d-flex {if $urls.current_url === $link->getModuleLink('blockwishlist', 'lists', array(), true)|escape:'html':'UTF-8'} active{/if}">
+          <div class="header-block">
+            <span class="header-block__action-btn">
+              <i class="material-icons header-block__icon" aria-hidden="true">favorite</i>
+            </span>
+          </div>
+        </a>
+
+        <a href="{$urls.pages.cart}" href="{$urls.pages.my_account}" id="cart" class="col-auto d-flex {if $urls.current_url === $urls.pages.cart} active{/if}">
           <div class="header-block d-flex align-items-center">
             <span class="header-block__action-btn">
               <i class="material-icons header-block__icon" aria-hidden="true">shopping_cart</i>
               <span class="header-block__badge">{$cart.products_count}</span>
             </span>
           </div>
-          {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
-        </div>
+        </a>
       </div>
     </div>
   </div>

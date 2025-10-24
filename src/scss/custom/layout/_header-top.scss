@@ -1,11 +1,32 @@
 $component-name: header-top;
 
 .#{$component-name} {
-  --header-top-border-bottom: #{$header-top-border-bottom};
-  --header-bottom-border-bottom: #{$header-bottom-border-bottom};
 
-  @include media-breakpoint-up(md) {
-    border-bottom: var(--header-top-border-bottom);
+  &__left {
+    padding: 0;
+    margin: 0;
+
+    .left-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+
+      .left-block__title {
+        display: none;
+      }
+
+      .left-block__content--list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        li {
+          margin-right: 45px;
+        }
+      }
+    }
   }
 
   a:not(.dropdown-item) {

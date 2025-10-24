@@ -15,11 +15,11 @@
   <nav class="{$headerTopName}">
     <div class="sami-container {$headerTopName}__container">
       <div class="{$headerTopName}-desktop d-none d-md-flex row">
-        <div class="{$headerTopName}__left col-md-5">
+        <div class="{$headerTopName}__left col-12">
           {hook h='displayNav1'}
         </div>
 
-        <div class="{$headerTopName}__right col-md-7">
+        <div class="{$headerTopName}__right d-none">
           {hook h='displayNav2'}
         </div>
       </div>
@@ -31,7 +31,7 @@
   <div class="{$headerBottomName}">
     <div class="sami-container {$headerBottomName}__container">
       <div class="row gx-2 align-items-stretch {$headerBottomName}__row">
-        <div class="d-flex align-items-center col-auto logo ms-lg-0 ms-2 me-lg-0 me-auto">
+        <div class="d-flex align-items-center col-auto logo-container">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}<h1 class="{$headerBottomName}__h1 mb-0">{/if}
               {renderLogo}

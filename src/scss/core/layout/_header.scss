@@ -1,10 +1,11 @@
 $component-name: header;
 
 .#{$component-name} {
-  --header-bg: #{$header-bg};
-  --header-top-bg: #{$header-top-bg};
-  --header-color: #{$header-color};
-  --header-top-color: #{$header-top-color};
+  --header-bg: #{$white-color};
+  --header-top-bg: #{$brown-color};
+  --header-color: #{$cream-color};
+  --header-dark-color: #{$brown-color};
+  --header-top-color: #{$white-color};
 
   position: sticky;
   top: 0;

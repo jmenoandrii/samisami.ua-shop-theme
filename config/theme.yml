@@ -64,7 +64,7 @@ global_settings:
       displayMyAccountBlock:
         - blockwishlist
       displayNav1:
-        - ps_contactinfo
+        - ps_linklist
       displayNav2:
         - ps_languageselector
         - ps_currencyselector

@@ -40,10 +40,10 @@
         </div>
 
         <div class="d-flex align-items-center justify-content-center navigation-container">
-          <a class="">
-            <i class="material-symbols-outlined header-block__icon" aria-hidden="true">favorite</i>
-            <span class="header-block__action-btn">
-              {l s='Cancel' d='Shop.Theme.Global'}
+          <a class="catalog-btn">
+            <i class="material-symbols-outlined catalog-icon" aria-hidden="true">bookmark_stacks</i>
+            <span class="catalog-span">
+              {l s='Catalog' d='Admin.Global'}
             </span>
           </a>
 
@@ -69,19 +69,19 @@
         <div class="d-flex align-items-center justify-content-right actions-container">
           <a href="{$urls.pages.my_account}" id="user_info" class="action-btn {if $urls.current_url === $urls.pages.my_account} active{/if}">
             <span class="">
-              <i class="material-symbols-outlined action-icon" aria-hidden="true">person</i>
+              <i class="material-symbols-outlined action-user-icon action-icon" aria-hidden="true">person</i>
             </span>
           </a>
 
           <a href="{$link->getModuleLink('blockwishlist', 'lists', array(), true)|escape:'html':'UTF-8'}" id="wishlist" class="action-btn {if $urls.current_url === $link->getModuleLink('blockwishlist', 'lists', array(), true)|escape:'html':'UTF-8'} active{/if}">
             <span class="">
-              <i class="material-symbols-outlined action-icon" aria-hidden="true">favorite</i>
+              <i class="material-symbols-outlined action-wishlist-icon action-icon" aria-hidden="true">favorite</i>
             </span>
           </a>
 
           <a href="{$urls.pages.cart}" href="{$urls.pages.my_account}" id="cart" class="action-btn {if $urls.current_url === $urls.pages.cart} active{/if}">
             <span class="">
-              <i class="material-symbols-outlined action-icon" aria-hidden="true">shopping_cart</i>
+              <i class="material-symbols-outlined action-cart-icon action-icon" aria-hidden="true">shopping_cart</i>
               <span class="action-cart-badge">{$cart.products_count}</span>
             </span>
           </a>

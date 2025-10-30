@@ -1,6 +1,11 @@
 $component-name: header-bottom;
 
 .#{$component-name} {
+  --header-catalog-bg-color: #{$brown-color};
+  --header-catalog-color: #{$cream-color};
+  --header-hover-catalog-bg-color: #{$dark-yellow-color};
+  --header-hover-catalog-color: #{$cream-color};
+
   --header-icons-color: #{$brown-color};
   --header-hover-icons-color: #{$dark-brown-color};
 
@@ -35,6 +40,37 @@ $component-name: header-bottom;
     }
   }
 
+  .navigation-container {
+    max-width: 900px;
+    width: 100%;
+
+    .catalog-btn {
+      padding: 7px 18px;
+      background-color: var(--header-catalog-bg-color);
+      color: var(--header-catalog-color);
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+
+      .catalog-icon {
+        color: inherit;
+        font-size: 24px;
+      }
+
+      .catalog-span {
+        color: inherit;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      &:hover {
+        background-color: var(--header-hover-catalog-bg-color);
+        color: var(--header-hover-catalog-color);
+      }
+    }
+  }
+
   .actions-container {
     gap: 25px;
 
@@ -51,7 +87,14 @@ $component-name: header-bottom;
       }
 
       .action-icon{
-        font-size: 33px;
+        font-size: 40px;
+      
+        &.action-user-icon {
+          font-size: 45px;
+        }
+        &.action-cart-icon {
+          font-size: 38px;
+        }
       }
 
       .action-cart-badge {

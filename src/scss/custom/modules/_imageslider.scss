@@ -9,11 +9,15 @@
   }
 }
 
-.ratio-homeSlider {
-  min-height: 300px;
+.slider-container {
+  margin: 35px 0;
 
-  --bs-aspect-ratio: calc(9 / 21 * 100%); // 21x9
-  @include media-breakpoint-up(md) {
-    --bs-aspect-ratio: calc(7 / 30 * 100%); // 30x7
+  .ratio-homeSlider {
+    height: 330px;
+
+    --bs-aspect-ratio: calc(9 / 21 * 100%); // 21x9
+    @include media-breakpoint-up(md) {
+      --bs-aspect-ratio: calc(7 / 30 * 100%); // 30x7
+    }
   }
 }

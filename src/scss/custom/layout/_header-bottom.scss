@@ -11,7 +11,8 @@ $component-name: header-bottom;
   --header-search-color: #{$brown-color};
 
   --header-icons-color: #{$brown-color};
-  --header-hover-icons-color: #{$dark-brown-color};
+  --header-hover-icons-color: #{$dark-white-color};
+  --header-pressed-icons-color: #{$brown-color};
 
   --header-cart-badge-bg-color: #{$dark-yellow-color};
   --header-cart-badge-color: #{$white-color};
@@ -20,7 +21,7 @@ $component-name: header-bottom;
   border-bottom: var(--header-bottom-border-bottom);
 
   &__row {
-    padding: 20px 0;
+    padding: 18px 0;
     display: flex;
     justify-content: space-between;
     flex-direction: row; 
@@ -33,10 +34,10 @@ $component-name: header-bottom;
 
     .navbar-brand {
       max-width: 100%;
-      max-height: 50px;
-      height: 50px;
+      height: 54px;
+      max-height: 54px;
       padding: 0;
-      width: 110px;
+      width: 118px;
 
       .logo {
         width: auto;
@@ -85,12 +86,14 @@ $component-name: header-bottom;
 
       #search_widget {
         .js-search-input {
-          padding: 10px 20px;
+          padding: 7px 18px;
           border-radius: 8px;
           border: 2px solid var(--header-search-border-color);
           background-color: var(--header-search-bg-color);
           color: var(--header-search-color);
           font-weight: bold;
+          font-size: 16px;
+          line-height: 20px;
         }
 
         input::placeholder {
@@ -99,6 +102,8 @@ $component-name: header-bottom;
 
         .search {
           right: 0;
+          font-size: 22px;
+          padding: 7px 17px;
         }
       }
     }
@@ -108,12 +113,7 @@ $component-name: header-bottom;
     gap: 25px;
 
     a.action-btn {
-      color: var(--header-icons-color);
       position: relative;
-
-      :hover {
-        color: var(--header-hover-icons-color);
-      }
 
       span {
         display: flex;
@@ -123,10 +123,30 @@ $component-name: header-bottom;
         font-size: 40px;
       
         &.action-user-icon {
-          font-size: 45px;
+          width: 33px;
+          height: 33px;
         }
         &.action-cart-icon {
-          font-size: 38px;
+          width: 35px;
+          height: 35px;
+        }
+        &.action-wishlist-icon {
+          width: 39px;
+          height: 33px;
+        }
+
+        .action-icon-outline {
+          fill: var(--header-icons-color);
+        }
+
+        .action-icon-filler {
+          fill: transparent;
+        }
+      }
+
+      &:hover .action-icon {
+        .action-icon-filler {
+          fill: var(--header-hover-icons-color);
         }
       }
 

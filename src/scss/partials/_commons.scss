@@ -1,16 +1,18 @@
 @use "sass:color";
 
 $default-icon-color: var(--bs-primary) !default;
-
-
 body,
 html {
   min-height: 100%;
 }
 
 body {
+  --body-color: #{$brown-color};
+  --body-bg-color: #{$gray-color};
+
   font-family: $font-family-base;
-  color: var(--bs-body-color);
+  color: var(---body-color);
+  background-color: var(--body-bg-color);
   direction: ltr;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

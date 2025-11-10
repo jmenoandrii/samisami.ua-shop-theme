@@ -103,45 +103,45 @@
                 >
               </picture>
             {/if}
-
-            {block name='quick_view_touch'}
-              <button class="{$componentName}__quickview_touch btn js-quickview" data-link-action="quickview">
-                <i class="material-icons">&#xE417;</i>
-              </button>
-            {/block}
           </div>
         {/block}
       </a>
 
       {block name='product_miniature_bottom'}
         <div class="{$componentName}__infos card-body">
-          {block name='quick_view'}
-            <div class="{$componentName}__quickview">
-              <button class="{$componentName}__quickview_button btn btn-link js-quickview btn-with-icon" data-link-action="quickview">
-                <i class="material-icons" aria-hidden="true">&#xE417;</i>
-                {l s='Quick view' d='Shop.Theme.Actions'}
-              </button>
-            </div>
-          {/block}
+          {if false}
+            <a href="{$product.url}" class="btn btn-outline-primary mt-3">
+              {l s='See details' d='Shop.Theme.Actions'}
+            </a>
+          {/if}
 
           <div class="{$componentName}__infos__top">
-            {block name='product_name'}
-              <a href="{$product.url}"><p class="{$componentName}__title">{$product.name}</p></a>
-            {/block}
-          </div>
-
-          <div class="{$componentName}__infos__bottom">
-            {block name='product_variants'}
-              <div class="{$componentName}__variants">
-                {if $product.main_variants}
-                  {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
-                {/if}
-              </div>
+            {block name='product_category'}
+              <a href="{$product.category_url}" class="{$componentName}__category"><p>{$product.category_name}</p></a>
             {/block}
 
             {block name='product_reviews'}
               {hook h='displayProductListReviews' product=$product}
             {/block}
+
+          </div>
+
+          <div class="{$componentName}__infos__middle">
+            {block name='product_name'}
+              <a href="{$product.url}" class="{$componentName}__title"><p>{$product.name}</p></a>
+            {/block}
+          </div>
+
+          <div class="{$componentName}__infos__bottom">
+            {if true == false}
+              {block name='product_variants'}
+                <div class="{$componentName}__variants">
+                  {if $product.main_variants}
+                    {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
+                  {/if}
+                </div>
+              {/block}
+            {/if}
 
             <div class="{$componentName}__prices">
               {block name='product_price'}
@@ -175,34 +175,6 @@
                 {/if}
               {/block}
             </div>
-
-            {if $product.add_to_cart_url}
-              <form action="{$urls.pages.cart}" method="post" class="d-flex flex-wrap flex-md-nowrap gap-3 align-items-center mt-3">
-                <input type="hidden" value="{$product.id_product}" name="id_product">
-
-                <input type="hidden" name="token" value="{$static_token}" />
-
-                <div class="quantity-button js-quantity-button w-100 w-sm-auto">
-                  {include file='components/qty-input.tpl'
-                    attributes=[
-                      "id" => "quantity_wanted_{$product.id_product}",
-                      "value" => "{$product.minimal_quantity}",
-                      "min" => "{$product.minimal_quantity}"
-                    ]
-                    marginHelper="mb-0"
-                  }
-                </div>
-
-                <button data-button-action="add-to-cart" class="btn btn-primary flex-grow-1 flex-md-grow-0">
-                  <i class="material-icons" aria-hidden="true">&#xe854;</i>
-                  <span class="visually-hidden">{l s='Add to cart' d='Shop.Theme.Actions'}</span>
-                </button>
-              </form>
-            {else}
-              <a href="{$product.url}" class="btn btn-outline-primary mt-3">
-                {l s='See details' d='Shop.Theme.Actions'}
-              </a>
-            {/if}
           </div>
         </div>
       {/block}

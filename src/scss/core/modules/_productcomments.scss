@@ -110,7 +110,7 @@
 .product-miniature {
   &:not(.reviews-loaded) {
     .product-list-reviews {
-      min-height: 2.5rem;
+      min-height: 10px;
     }
   }
 
@@ -119,11 +119,6 @@
     inset: auto;
     display: flex;
     justify-content: start;
-    padding: 0.5rem 0 1rem;
-
-    .comments-nb {
-      margin: 0;
-    }
   }
 }
 

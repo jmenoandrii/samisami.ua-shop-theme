@@ -5,22 +5,43 @@
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 0.25rem;
+  align-items: flex-start;  
+  padding: 10px;
 }
 
 .badge {
-  margin: 0.25rem;
-  background-color: var(--bs-primary);
+  --flag-badge-color: #{$white-color};
+  --flag-classic-badge-bg-color: #{$brown-color};
+  --flag-on-sale-badge-bg-color: #{$dark-yellow-color};
+  --flag-new-badge-bg-color: #{$yellow-color};
+  --flag-new-badge-text-color: #{$brown-color};
+  --flag-hot-bg-color: #{$cream-color};
+  --flag-hot-text-color: #{$brown-color};
 
-  @include media-breakpoint-down(md) {
-    padding: 0.25rem;
-    font-size: 0.75rem;
+  color: var(--flag-badge-color);
+  margin-right: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 7px;
+  padding: 6px 8px;
+  min-width: 72px;
+
+  &.classic {
+    background-color: var(--flag-classic-badge-bg-color);
+  }
+  &.on-sale {
+    background-color: var(--flag-on-sale-badge-bg-color);
+  }
+  &.new {
+    background-color: var(--flag-new-badge-bg-color);
+    color: var(--flag-new-badge-text-color);
+  }
+  &.hot {
+    background-color: var(--flag-hot-bg-color);
+    color: var(--flag-hot-text-color);
   }
 
   &.discount {
-    color: var(--bs-primary);
-    background-color: var(--bs-white);
-    border: 1px solid var(--bs-primary);
+    display: none;
   }
 }

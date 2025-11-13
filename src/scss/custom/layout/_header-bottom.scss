@@ -9,6 +9,7 @@ $component-name: header-bottom;
   --header-search-bg-color: #{$white-color};
   --header-search-border-color: #{$brown-color};
   --header-search-color: #{$brown-color};
+  --header-hover-search-color: #{$dark-brown-color};
 
   --header-icons-color: #{$brown-color};
   --header-hover-icons-color: #{$dark-white-color};
@@ -96,14 +97,21 @@ $component-name: header-bottom;
           line-height: 20px;
         }
 
-        input::placeholder {
-          opacity: 0.8;
+        .js-search-input::placeholder {
+          opacity: 1;
         }
 
         .search {
           right: 0;
           font-size: 22px;
           padding: 7px 17px;
+          color: var(--header-search-color);
+          cursor: pointer;
+          transition: color .25s ease-out;
+
+          &:hover {
+            color: var(--header-hover-search-color);
+          }
         }
       }
     }
@@ -121,6 +129,10 @@ $component-name: header-bottom;
 
       .action-icon{
         font-size: 40px;
+
+        path {
+          transition: fill .25s ease-out;
+        }
       
         &.action-user-icon {
           width: 33px;

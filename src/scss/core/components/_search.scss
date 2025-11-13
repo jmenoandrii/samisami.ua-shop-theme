@@ -73,13 +73,13 @@ $component-name: search;
       position: absolute;
       top: calc(100% + 1rem);
       right: 0;
-      width: 100vw;
-      max-width: 30rem;
+      width: 100%;
       overflow: hidden;
       background: var(--bs-white);
       border: 1px solid $input-border-color;
       border-radius: var(--bs-border-radius-sm);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 104;
 
       @include media-breakpoint-down(md) {
         top: calc(100% + 0.25rem);
@@ -125,11 +125,6 @@ $component-name: search;
       @include media-breakpoint-down(md) {
         font-size: 0.9rem;
       }
-    }
-
-    .search {
-      right: 1.5rem;
-      color: var(--bs-gray-700);
     }
 
     .clear {

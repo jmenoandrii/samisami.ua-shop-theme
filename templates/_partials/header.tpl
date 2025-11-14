@@ -4,6 +4,7 @@
  *}
 {$headerTopName = 'header-top'}
 {$headerBottomName = 'header-bottom'}
+{$headerMegaMenuName = 'header-mega-menu'}
 
 {block name='header_banner'}
   <div class="header__banner">
@@ -100,4 +101,14 @@
   </div>
 
   {hook h='displayNavFullWidth'}
+{/block}
+
+{block name='header_mega_menu'}
+  <div class="{$headerMegaMenuName}">
+    <div class ="{$headerMegaMenuName}__wrapper">
+      {hook h='displayMegaMenu'}
+    </div>
+    <div class="{$headerMegaMenuName}__background">
+    </div>
+  </div>
 {/block}

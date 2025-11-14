@@ -20,6 +20,8 @@ $component-name: header-bottom;
 
   padding: 0;
   border-bottom: var(--header-bottom-border-bottom);
+  position: relative;
+  z-index: 430;
 
   &__row {
     padding: 18px 0;

@@ -1,0 +1,101 @@
+$component-name: header-mega-menu;
+
+.#{$component-name} {
+    --header-mega-menu-wrapper-bg-color: #{$white-color};
+    --header-mega-menu-bg-color: #{$black-color-modal-bg};
+    --header-mega-menu-shadow-color: #{$dark-yellow-color};
+    --header-mega-menu-border-color: #{$brown-color};
+
+    --header-mega-menu-link-color: #{$brown-color};
+    --header-mega-menu-hover-link-color: #{$dark-brown-color};
+    --header-mega-menu-active-link-color: #{$yellow-color};
+
+    position: relative;
+    
+    &__wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-repeat: repeat-x;
+        background-position: right;
+        background-size: auto 100%;
+        background-image: url("data:image/svg+xml;utf8,\
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1'>\
+        <path d='M1440 0.5L0 0.5' stroke='%23402120' stroke-linecap='round' stroke-dasharray='7 7'/>\
+        </svg>");
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 420;
+        background-color: var(--header-mega-menu-wrapper-bg-color);
+        box-shadow: 0px 74px 106.8px -95px var(--header-mega-menu-shadow-color);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        padding: 40px 0;
+    }
+
+    &__container {
+        align-items: start;
+        display: grid;
+        gap: 40px 40px;
+        grid-template-columns: repeat(auto-fill,minmax(182px,1fr));
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 36px;
+        margin-bottom: 20px;
+        line-height: 40px;
+
+        &__link {
+            color: var(--header-mega-menu-link-color);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--header-mega-menu-hover-link-color);
+            }
+            &.active {
+                color: var(--header-mega-menu-active-link-color);
+            }
+        }
+    }
+
+    &__list-item {
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 15px;
+        line-height: 22px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &__link {
+            color: var(--header-mega-menu-link-color);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--header-mega-menu-hover-link-color);
+            }
+            &.active {
+                color: var(--header-mega-menu-active-link-color);
+            }
+        }
+    }
+    
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--header-mega-menu-bg-color);
+        z-index: 400;
+        backdrop-filter: blur(15px); /* Apply a 5px blur */
+        -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    }
+}

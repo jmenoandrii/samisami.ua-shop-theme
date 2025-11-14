@@ -3,6 +3,8 @@ $component-name: header-top;
 .#{$component-name} {
   --header-links-color: #{$white-color};
   --header-hover-links-color: #{$dark-yellow-color};
+  position: relative;
+  z-index: 430;
 
   &__left {
     padding: 0;

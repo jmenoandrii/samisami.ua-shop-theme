@@ -66,7 +66,6 @@ $component-name: product-miniature;
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,14 +92,13 @@ $component-name: product-miniature;
         fill: transparent;
       }
 
-      &:hover .action-icon-filler {
-        fill: var(--product-view-link-hover-icon-color);
-      }
-
       &:active:focus .action-icon-filler {
         fill: var(--product-view-link-active-icon-color);
       }
 
+      &:hover .action-icon-filler {
+        fill: var(--product-view-link-hover-icon-color);
+      }
     }
 
     &.delete_wishlist {
@@ -114,7 +112,6 @@ $component-name: product-miniature;
     position: absolute;
     top: 56px;
     right: 10px;
-    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,12 +134,12 @@ $component-name: product-miniature;
         fill: transparent;
       }
 
-      &:hover .action-icon-filler {
-        fill: var(--product-view-link-hover-icon-color);
-      }
-
       &:active:focus .action-icon-filler {
         fill: var(--product-view-link-active-icon-color);
+      }
+
+      &:hover .action-icon-filler {
+        fill: var(--product-view-link-hover-icon-color);
       }
     }
   }

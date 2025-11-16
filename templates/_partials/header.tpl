@@ -2,31 +2,8 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *}
-{$headerTopName = 'header-top'}
 {$headerBottomName = 'header-bottom'}
 {$headerMegaMenuName = 'header-mega-menu'}
-
-{block name='header_banner'}
-  <div class="header__banner">
-    {hook h='displayBanner'}
-  </div>
-{/block}
-
-{block name='header_nav'}
-  <nav class="{$headerTopName}">
-    <div class="sami-container {$headerTopName}__container">
-      <div class="{$headerTopName}-desktop d-none d-md-flex row">
-        <div class="{$headerTopName}__left col-12">
-          {hook h='displayNav1'}
-        </div>
-
-        <div class="{$headerTopName}__right d-none">
-          {hook h='displayNav2'}
-        </div>
-      </div>
-    </div>
-  </nav>
-{/block}
 
 {block name='header_bottom'}
   <div class="{$headerBottomName}">
@@ -41,12 +18,15 @@
         </div>
 
         <div class="d-flex align-items-center justify-content-center navigation-container">
-          <a class="catalog-btn">
-            <i class="material-symbols-outlined catalog-icon" aria-hidden="true">bookmark_stacks</i>
-            <span class="catalog-span">
-              {l s='Catalog' d='Admin.Global'}
+          <button class="catalog-btn">
+            <span class="catalog-btn-content">
+              <i class="material-symbols-outlined catalog-open-span catalog-icon" aria-hidden="true">menu</i>
+              <i class="material-symbols-outlined catalog-close-span catalog-icon" aria-hidden="true">close</i>
+              <span class="catalog-span">
+                {l s='Catalog' d='Admin.Global'}
+              </span>
             </span>
-          </a>
+          </button>
 
           <div class="search__mobile d-md-none d-flex">
 

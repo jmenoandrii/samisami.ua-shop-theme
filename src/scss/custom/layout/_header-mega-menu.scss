@@ -10,7 +10,11 @@ $component-name: header-mega-menu;
     --header-mega-menu-hover-link-color: #{$dark-brown-color};
     --header-mega-menu-active-link-color: #{$yellow-color};
 
-    position: relative;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    pointer-events: none;
+    display: none;
     
     &__wrapper::before {
         content: "";
@@ -30,12 +34,15 @@ $component-name: header-mega-menu;
 
     &__wrapper {
         position: relative;
-        z-index: 420;
+        z-index: 1020;
         background-color: var(--header-mega-menu-wrapper-bg-color);
         box-shadow: 0px 74px 106.8px -95px var(--header-mega-menu-shadow-color);
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
         padding: 40px 0;
+        top: -100%;
+        opacity: 0;
+        transition: top 0.4s ease, opacity 0.4s ease;
     }
 
     &__container {
@@ -55,11 +62,11 @@ $component-name: header-mega-menu;
             color: var(--header-mega-menu-link-color);
             text-decoration: none;
 
-            &:hover {
-                color: var(--header-mega-menu-hover-link-color);
-            }
             &.active {
                 color: var(--header-mega-menu-active-link-color);
+            }
+            &:hover {
+                color: var(--header-mega-menu-hover-link-color);
             }
         }
     }
@@ -78,11 +85,11 @@ $component-name: header-mega-menu;
             color: var(--header-mega-menu-link-color);
             text-decoration: none;
 
-            &:hover {
-                color: var(--header-mega-menu-hover-link-color);
-            }
             &.active {
                 color: var(--header-mega-menu-active-link-color);
+            }
+            &:hover {
+                color: var(--header-mega-menu-hover-link-color);
             }
         }
     }
@@ -94,8 +101,31 @@ $component-name: header-mega-menu;
         width: 100vw;
         height: 100vh;
         background-color: var(--header-mega-menu-bg-color);
-        z-index: 400;
-        backdrop-filter: blur(15px); /* Apply a 5px blur */
-        -webkit-backdrop-filter: blur(15px); /* For Safari support */
+        z-index: 1000;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, backdrop-filter 0.25s ease, -webkit-backdrop-filter 0.25s ease, visibility 0.25s;
+    }
+
+    &.opening {
+        display: block;
+    }
+
+    &.active {
+        pointer-events: auto;
+        
+        .#{$component-name}__background {
+            opacity: 1;
+            visibility: visible;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        
+        .#{$component-name}__wrapper {
+            top: 0;
+            opacity: 1;
+        }
     }
 }

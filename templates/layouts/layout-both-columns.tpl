@@ -20,8 +20,14 @@
     {block name='product_activation'}
       {include file='catalog/_partials/product-activation.tpl'}
     {/block}
+    
+    <div id="header-top" class="header-top">
+      {block name='header-top'}
+        {include file='_partials/header-top.tpl'}
+      {/block}
+    </div>
 
-    <header id="header" class="header js-sticky-header">
+    <header id="header" class="header">
       {block name='header'}
         {include file='_partials/header.tpl'}
       {/block}

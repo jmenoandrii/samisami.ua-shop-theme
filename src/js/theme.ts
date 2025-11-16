@@ -29,6 +29,7 @@ import initDesktopMenu from './modules/ps_mainmenu';
 import initFormValidation from './form-validation';
 import initCategoryTree from './modules/ps_categorytree';
 import initScrollPaddingTop from './helpers/scrollPadding';
+import initHeaderMegaMenu from './header-mega-menu';
 
 initEmitter();
 
@@ -49,6 +50,7 @@ $(() => {
   initGuestPasswordToggle();
   initVisiblePassword();
   initDesktopMenu();
+  initHeaderMegaMenu();
   initFormValidation();
   initErrorHandler();
   usePasswordPolicy('.field-password-policy');
@@ -60,6 +62,7 @@ $(() => {
     initLanguageSelector();
     initCurrencySelector();
     initDesktopMenu();
+    initHeaderMegaMenu();
   });
 });
 
@@ -88,4 +91,5 @@ export default {
   initGuestPasswordToggle,
   initVisiblePassword,
   initDesktopMenu,
+  initHeaderMegaMenu,
 };

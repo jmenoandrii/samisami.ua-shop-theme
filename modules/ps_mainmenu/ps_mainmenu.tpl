@@ -5,14 +5,14 @@
     {foreach from=$nodes item=node}
       <div class="{$headerMegaMenuName}__section">
         <h3 class="{$headerMegaMenuName}__title">
-          <a class="{$headerMegaMenuName}__title__link" href="{$node.url}" {if $node.open_in_new_window}target="_blank"{/if}>{$node.label}</a>
+          <a class="{$headerMegaMenuName}__title__link {if $urls.current_url === $node.url} active{/if}" href="{$node.url}" {if $node.open_in_new_window}target="_blank"{/if}>{$node.label}</a>
         </h3>
 
         {if $node.children|count}
           <ul class="{$headerMegaMenuName}__list">
             {foreach from=$node.children item=child}
               <li class="{$headerMegaMenuName}__list-item">
-                <a href="{$child.url}" class="{$headerMegaMenuName}__list-item__link" {if $child.open_in_new_window}target="_blank"{/if}>
+                <a href="{$child.url}" class="{$headerMegaMenuName}__list-item__link {if $urls.current_url === $child.url} active{/if}" {if $child.open_in_new_window}target="_blank"{/if}>
                   {$child.label}
                 </a>
               </li>

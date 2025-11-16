@@ -4,7 +4,7 @@ $component-name: header-top;
   --header-links-color: #{$white-color};
   --header-hover-links-color: #{$dark-yellow-color};
   position: relative;
-  z-index: 430;
+  z-index: 1030;
 
   &__left {
     padding: 0;

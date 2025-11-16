@@ -1,10 +1,14 @@
 $component-name: header-bottom;
 
 .#{$component-name} {
+  --header-bg-color: #{$white-color};
+
   --header-catalog-bg-color: #{$brown-color};
   --header-catalog-color: #{$cream-color};
   --header-hover-catalog-bg-color: #{$dark-yellow-color};
   --header-hover-catalog-color: #{$cream-color};
+  --header-active-catalog-bg-color: #{$yellow-color};
+  --header-active-catalog-color: #{$brown-color};
 
   --header-search-bg-color: #{$white-color};
   --header-search-border-color: #{$brown-color};
@@ -13,15 +17,17 @@ $component-name: header-bottom;
 
   --header-icons-color: #{$brown-color};
   --header-hover-icons-color: #{$dark-white-color};
-  --header-pressed-icons-color: #{$brown-color};
+  --header-active-icons-color: #{$brown-color};
 
   --header-cart-badge-bg-color: #{$dark-yellow-color};
   --header-cart-badge-color: #{$white-color};
 
   padding: 0;
-  border-bottom: var(--header-bottom-border-bottom);
-  position: relative;
-  z-index: 430;
+  position: absolute;
+  top: 0;
+  z-index: 1030;
+  width: 100%;
+  background-color: var(--header-bg-color);
 
   &__row {
     padding: 18px 0;
@@ -61,6 +67,10 @@ $component-name: header-bottom;
       display: inline-flex;
       align-items: center;
       gap: 15px;
+      border: 0;
+      transition: background-color .25s ease-out, color .25s ease-out;
+      min-width: 150px;
+      justify-content: center;
 
       .catalog-icon {
         color: inherit;
@@ -71,6 +81,34 @@ $component-name: header-bottom;
         color: inherit;
         font-size: 16px;
         font-weight: 400;
+      }
+
+      & > .catalog-btn-content {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .catalog-open-span {
+        display: block;
+      }
+
+      .catalog-close-span {
+        display: none;
+      }
+
+      &.active {
+        background-color: var(--header-active-catalog-bg-color);
+        color: var(--header-active-catalog-color);
+
+        .catalog-open-span {
+          display: none;
+        }
+
+        .catalog-close-span {
+          display: block;
+        }
       }
 
       &:hover {
@@ -158,6 +196,11 @@ $component-name: header-bottom;
         }
       }
 
+      &:is(.active, :active, :focus) .action-icon {
+        .action-icon-filler {
+          fill: var(--header-active-icons-color);
+        }
+      }
       &:hover .action-icon {
         .action-icon-filler {
           fill: var(--header-hover-icons-color);
@@ -174,17 +217,6 @@ $component-name: header-bottom;
         border-radius: 50%;
         padding: 1px 4px;
       }
-    }
-  }
-
-  .nav-link {
-    &:active,
-    &.active {
-      color: var(--bs-white);
-    }
-
-    &:active:hover {
-      color: var(--bs-white);
     }
   }
 }

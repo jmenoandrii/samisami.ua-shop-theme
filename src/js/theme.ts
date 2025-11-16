@@ -30,6 +30,7 @@ import initFormValidation from './form-validation';
 import initCategoryTree from './modules/ps_categorytree';
 import initScrollPaddingTop from './helpers/scrollPadding';
 import initHeaderMegaMenu from './header-mega-menu';
+import initHomeSlider from './home-slider';
 
 initEmitter();
 
@@ -56,6 +57,7 @@ $(() => {
   usePasswordPolicy('.field-password-policy');
   initCategoryTree();
   initScrollPaddingTop();
+  initHomeSlider();
 
   prestashop.on(events.responsiveUpdate, () => {
     initSearchbar();
@@ -92,4 +94,5 @@ export default {
   initVisiblePassword,
   initDesktopMenu,
   initHeaderMegaMenu,
+  initHomeSlider,
 };

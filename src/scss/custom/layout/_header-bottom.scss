@@ -96,6 +96,12 @@ $component-name: header-bottom;
 
       .catalog-close-span {
         display: none;
+        transform: rotate(0deg);
+      }
+
+      @keyframes spin360 {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(90deg); }
       }
 
       &.active {
@@ -107,7 +113,8 @@ $component-name: header-bottom;
         }
 
         .catalog-close-span {
-          display: block;
+          display: inline-block;
+          animation: spin360 .25s ease forwards;
         }
       }
 

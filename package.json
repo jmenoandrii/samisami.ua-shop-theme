@@ -83,6 +83,8 @@
     "@popperjs/core": "^2.11.8",
     "@types/jquery": "^3.5.31",
     "bootstrap": "5.3.3",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "events": "^3.3.0",
     "jquery": "^3.7.1",
     "jquery-touchswipe": "^1.6",

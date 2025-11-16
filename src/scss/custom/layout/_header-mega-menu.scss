@@ -42,7 +42,7 @@ $component-name: header-mega-menu;
         padding: 40px 0;
         top: -100%;
         opacity: 0;
-        transition: top 0.4s ease, opacity 0.4s ease;
+        transition: top 0.2s ease, opacity 0.2s ease;
     }
 
     &__container {
@@ -115,6 +115,7 @@ $component-name: header-mega-menu;
 
     &.active {
         pointer-events: auto;
+        display: block;
         
         .#{$component-name}__background {
             opacity: 1;

@@ -77,6 +77,7 @@ global_settings:
       displayHome:
         - ps_imageslider
         - ps_customtext
+        - sami_categorieslist
         - ps_featuredproducts
         - ps_banner
         - ps_newproducts

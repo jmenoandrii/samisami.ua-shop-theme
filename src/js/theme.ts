@@ -30,7 +30,7 @@ import initFormValidation from './form-validation';
 import initCategoryTree from './modules/ps_categorytree';
 import initScrollPaddingTop from './helpers/scrollPadding';
 import initHeaderMegaMenu from './header-mega-menu';
-import initHomeSlider from './home-slider';
+import initEmblaSlider from './services/embla-init';
 
 initEmitter();
 
@@ -57,7 +57,8 @@ $(() => {
   usePasswordPolicy('.field-password-policy');
   initCategoryTree();
   initScrollPaddingTop();
-  initHomeSlider();
+  initEmblaSlider('#home-slider', { loop: true }, {active: true});
+  initEmblaSlider('#home-categories-list', { align: 'start', loop: false });
 
   prestashop.on(events.responsiveUpdate, () => {
     initSearchbar();
@@ -94,5 +95,5 @@ export default {
   initVisiblePassword,
   initDesktopMenu,
   initHeaderMegaMenu,
-  initHomeSlider,
+  initEmblaSlider,
 };

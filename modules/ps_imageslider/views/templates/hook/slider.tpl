@@ -31,6 +31,27 @@
                   {/if}
                 </figure>
               </div>
+            {/foreach}      
+            {foreach from=$homeslider.slides item=slide name='homeslider'}
+              <div class="embla__slide">
+                <figure class="{$homeSliderName}__content">
+                  <img src="{$slide.image_url}" alt="{$slide.legend|escape}" {if $slide@iteration == 1}loading="eager"{else}loading="lazy"{/if} {$slide.size|replace: '"':''}>
+                  <div class="{$homeSliderName}__backdrop-img"></div>
+                  {if $slide.title || $slide.description}
+                    <figcaption class="{$homeSliderName}__caption">
+                      <div class="{$homeSliderName}__caption-top">
+                        <h2 class="{$homeSliderName}__title">{$slide.title}</h2>
+                        <div class="{$homeSliderName}__description">{$slide.description nofilter}</div>
+                      </div>
+                      <div class="{$homeSliderName}__caption-bottom">
+                        {if !empty($slide.url)}
+                          <a class="{$homeSliderName}__link" href="{$slide.url}">{$slide.legend}</a>
+                        {/if}
+                      </div>
+                    </figcaption>
+                  {/if}
+                </figure>
+              </div>
             {/foreach}
           </div>
         </div>

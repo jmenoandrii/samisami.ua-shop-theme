@@ -7,8 +7,8 @@
 {block name='section_title'}
   <div class="{$componentName}__container">
     <h2 class="h2 {$componentName}">{$title}</h2>
-    {if isset($link)}
-      <a class="{$componentName}__link" href="{$link}">
+    {if isset($sectionLink)}
+      <a class="{$componentName}__link" href="{$sectionLink}">
         {l s='All products' d='Shop.Theme.Catalog'}
         →
       </a>

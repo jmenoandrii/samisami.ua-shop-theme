@@ -4,7 +4,7 @@
  *}
 <section class="best-sellers-products mt-3">
     <div class="container sami-container">
-        {include file='components/section-title.tpl' title={l s='Best Sellers' d='Shop.Theme.Catalog'} link=$allBestSellers}
+        {include file='components/section-title.tpl' title={l s='Best Sellers' d='Shop.Theme.Catalog'} sectionLink=$allBestSellers}
         {include file='catalog/_partials/productlist.tpl' products=$products productClass='col-12 col-xs-6 col-lg-4 col-xl-3'}
     </div>
 </section>

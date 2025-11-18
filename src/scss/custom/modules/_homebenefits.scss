@@ -1,0 +1,68 @@
+$component-name: home-benefits;
+
+.#{$component-name} {
+    --home-benefits-bg-color-1: #{$yellow-color};
+    --home-benefits-bg-color-2: #{$dark-yellow-color};
+    --home-benefits-color: #{$white-color};
+
+    @property --gradient-angle {
+        syntax: '<angle>';
+        initial-value: 20deg;
+        inherits: false;
+    }
+
+    @keyframes rotateGradientSmooth {
+        from {
+            --gradient-angle: 20deg;
+        }
+        50% {
+            --gradient-angle: 120deg;
+        }
+        to {
+            --gradient-angle: 20deg;
+        }
+    }
+
+    margin-bottom: 15px;
+    background: var(--home-benefits-bg-color-2);
+    --gradient-angle: 20deg;
+    background: linear-gradient(var(--gradient-angle), var(--home-benefits-bg-color-2) 0%, var(--home-benefits-bg-color-1) 50%, var(--home-benefits-bg-color-2) 100%);
+    animation: rotateGradientSmooth 12s ease-in-out infinite alternate;
+    transition: background-image 0.5s ease-in-out;
+
+    &__wrapper {
+        display: flex;
+        max-width: 1440px;
+        padding: 0 180px;
+        margin: auto;
+        gap: 150px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 18px 0;
+    }
+
+    &__icon {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' -25,
+        'opsz' 40;
+        font-size: 34px;
+        color: var(--home-benefits-color);
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+        color: var(--home-benefits-color);
+        margin: 0;
+    }
+}
+

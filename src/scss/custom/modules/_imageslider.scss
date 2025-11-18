@@ -188,6 +188,8 @@ $component-name: home-slider;
   .embla__button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    background-color: var(--home-categories-list-arrow-bg-color);
+    color: var(--home-categories-list-hover-arrow-color);
   }
   .embla__button__svg {
     width: 35%;

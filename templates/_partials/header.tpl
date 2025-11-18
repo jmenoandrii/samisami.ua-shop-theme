@@ -58,7 +58,7 @@
             </span>
           </a>
 
-          <a href="{$link->getModuleLink('blockwishlist', 'lists', array(), true)|escape:'html':'UTF-8'}" id="wishlist" class="action-btn {if $urls.current_url === $link->getModuleLink('blockwishlist', 'lists', array(), true)|escape:'html':'UTF-8'} active{/if}">
+          <a href="{$link->getModuleLink('ets_wishlist_pres17', 'lists', array(), true)|escape:'html':'UTF-8'}" id="wishlist" class="action-btn {if $urls.current_url === $link->getModuleLink('ets_wishlist_pres17', 'lists', array(), true)|escape:'html':'UTF-8'} active{/if}">
             <span class="">
               <svg class="action-wishlist-icon action-icon" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="action-icon-filler" d="M10.3111 1.56152C15.1455 1.56152 19.0611 5.27375 19.0611 9.85323C19.0611 5.27375 22.9768 1.56152 27.8111 1.56152C32.6455 1.56152 36.5611 5.27375 36.5611 9.85323C36.5611 16.7552 29.4868 19.1899 19.9186 30.1764C19.8133 30.297 19.682 30.394 19.5339 30.4605C19.3858 30.5271 19.2244 30.5615 19.0611 30.5615C18.8978 30.5615 18.7365 30.5271 18.5884 30.4605C18.4403 30.394 18.309 30.297 18.2036 30.1764C8.6355 19.1899 1.56113 16.7552 1.56113 9.85323C1.56113 5.27375 5.47675 1.56152 10.3111 1.56152Z" stroke="#402120" stroke-width="3.12225"/>

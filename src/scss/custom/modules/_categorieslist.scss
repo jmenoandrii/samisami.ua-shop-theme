@@ -7,6 +7,8 @@ $component-name: home-categories-list;
 
 .#{$component-name} {
   --home-categories-list-bg-color: #{$white-color};
+  --home-categories-list-hover-bg-color: #{$hover-white-color};
+  --home-categories-list-active-bg-color: #{$brown-color};
 
   --home-categories-list-arrow-color: #{$white-color};
   --home-categories-list-arrow-bg-color: #{$brown-color};
@@ -14,6 +16,8 @@ $component-name: home-categories-list;
   --home-categories-list-hover-arrow-bg-color: #{$dark-yellow-color};
 
   --home-categories-list-span-color: #{$brown-color};
+  --home-categories-list-active-span-color: #{$yellow-color};
+  --home-categories-list-active-icon-color: #{$yellow-color};
 
   --home-categories-list-button-color: #{$brown-color};
   --home-categories-list-button-bg-color: #{$yellow-color};
@@ -33,6 +37,7 @@ $component-name: home-categories-list;
     -moz-user-select: none;
     -webkit-user-select: none;
     background-color: var(--home-categories-list-bg-color);
+    transition: background-color 0.25s ease;
 
     a {
       display: flex;
@@ -43,12 +48,31 @@ $component-name: home-categories-list;
       align-items: center;
     }
 
+    picture {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    picture::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--home-categories-list-active-icon-color);
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
     img {
       width: 90px;
       height: 80px;
       object-fit: contain;
       display: block;
-      margin-bottom: 24px;
       position: relative;
     }
 
@@ -59,18 +83,18 @@ $component-name: home-categories-list;
     }
 
     &:hover {
-      img {
-        opacity: 0;
+      background-color: var(--home-categories-list-hover-bg-color);
+    }
+
+    &.active {
+      background-color: var(--home-categories-list-active-bg-color);
+
+      picture::after {
+        opacity: 1;
       }
-      img::after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #F2A055;  
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-size: contain;
+
+      figcaption {
+        color: var(--home-categories-list-active-span-color);
       }
     }
   }
@@ -141,6 +165,8 @@ $component-name: home-categories-list;
   .embla__button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    background-color: var(--home-categories-list-arrow-bg-color);
+    color: var(--home-categories-list-hover-arrow-color);
   }
   .embla__button__svg {
     width: 35%;

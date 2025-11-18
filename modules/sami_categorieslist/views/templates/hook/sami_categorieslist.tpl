@@ -13,7 +13,6 @@
                                 <a href="{$category.link}">
                                     <picture>
                                         <img src="{$category.image}" alt="{$category.name}"/>
-                                        <div style="-webkit-mask-image: url({$category.image});mask-image: url({$category.image});" class="{$homeCategoriesListName}__img-on-hover"></div>
                                     </picture>
                                     <figcaption>{$category.name}</figcaption>
                                 </a>

@@ -1,16 +1,12 @@
 {$homeBenefitsName = 'home-benefits'}
 
-<section class="{$homeBenefitsName}__container">
+<section class="{$homeBenefitsName}">
     <div class="{$homeBenefitsName}__wrapper">
         {foreach from=$benefits item=benefit}
             <div class="{$homeBenefitsName}__item">
-                <div class="benefit-icon">
-                    <i class="fa {$benefit.icon}"></i>
-                </div>
-                <div class="benefit-title">
-                    <h3>{$benefit.title}</h3>
-                </div>
+                <i class="{$homeBenefitsName}__icon material-symbols-outlined" aria-hidden="true">{$benefit.icon}</i>
+                <h3 class="{$homeBenefitsName}__title">{$benefit.title}</h3>
             </div>
         {/foreach}
     </div>
-</div>
+</section>

@@ -56,6 +56,13 @@
           </div>
         </div>
 
+        <div class="{$homeSliderName}__hiders">
+          <div class="{$homeSliderName}__hider {$homeSliderName}__hider-left">
+          </div>
+          <div class="{$homeSliderName}__hider {$homeSliderName}__hider-right">
+          </div>
+        </div>
+
         <div class="embla__buttons">
           <button class="embla__button embla__button--prev" type="button">
             <svg class="embla__button__svg" viewBox="0 0 532 532">
@@ -73,13 +80,6 @@
               ></path>
             </svg>
           </button>
-        </div>
-
-        <div class="{$homeSliderName}__hiders">
-          <div class="{$homeSliderName}__hider {$homeSliderName}__hider-left">
-          </div>
-          <div class="{$homeSliderName}__hider {$homeSliderName}__hider-right">
-          </div>
         </div>
       </div>
     </div>

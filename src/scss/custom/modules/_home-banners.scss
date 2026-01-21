@@ -1,0 +1,15 @@
+$component-name: home-banners;
+
+.#{$component-name} {
+    &__item {
+        background-color: red!important;
+    }
+
+    &__item-half {
+
+    }
+
+    &__item-full {
+
+    }
+}

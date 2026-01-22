@@ -1,15 +1,164 @@
 $component-name: home-banners;
 
 .#{$component-name} {
+    --home-banners-color: #{$brown-color};
+    --home-banners-button-color: #{$white-color};
+    --home-banners-button-bg-color: #{$brown-color};
+    --home-banners-overlay-bg-color: #{$dark-yellow-color};
+
+    --home-banners-hover-button-color: #{$white-color};
+    --home-banners-hover-button-bg-color: #{$dark-brown-color};
+
+    --home-banners-dark-color: #{$white-color};
+    --home-banners-dark-bg-color: #{$brown-color};
+    --home-banners-dark-button-color: #{$brown-color};
+    --home-banners-dark-button-bg-color: #{$yellow-color};
+
+    --home-banners-dark-hover-button-color: #{$brown-color};
+    --home-banners-dark-hover-button-bg-color: #{$hover-yellow-color};
+
+    margin: 20px 0 40px;
+
+    & .sami-container {
+        gap: 24px 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     &__item {
-        background-color: red!important;
+        position: relative;
+        background-size: cover;
+        border-radius: 8px;
+        width: 100%;
     }
 
     &__item-half {
+        height: 350px;
+    }
 
+    :is(&__item-full, &__item-full-overlay) {
+        height: 300px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    &__content {
+        height: 100%;
+        padding: 30px 23px;
+        display: flex;
+        flex-direction: column;
+        color: var(--home-banners-color);
+        position: relative;
+    }
+
+    :is(&__item-full, &__item-full-overlay) &__content {
+        max-width: 530px;
+        padding: 30px 45px;
+    }
+
+    &__align-x-left &__content {
+        text-align: start;
+        justify-content: start;
+        margin-right: auto;
+    }
+
+    &__align-x-center &__content {
+        text-align: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    &__align-x-right &__content {
+        text-align: start;
+        justify-content: end;
+        margin-left: auto;
     }
 
     &__item-full {
+        width: 100%;
+        display: flex;
 
+        .#{$component-name}__full-image {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .#{$component-name}__content {
+            margin: 0;
+            border-radius: 0 8px 8px 0;
+        }
+    }
+
+    &__title {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    &__button-wrapper {
+        display: inline-flex;
+        margin-top: auto;
+    }
+
+    &__button {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+        border-radius: 8px;
+        padding: 13px;
+        color: var(--home-banners-button-color);
+        background-color: var(--home-banners-button-bg-color);
+
+        &:hover {
+            color: var(--home-banners-hover-button-color);
+            background-color: var(--home-banners-hover-button-bg-color);
+        }
+    }
+
+    &__theme-dark {
+        .#{$component-name}__content {
+            color: var(--home-banners-dark-color);
+            background-color: var(--home-banners-dark-bg-color);
+        }
+
+        .#{$component-name}__button {
+            color: var(--home-banners-dark-button-color);
+            background-color: var(--home-banners-dark-button-bg-color);
+
+            &:hover {
+                color: var(--home-banners-dark-hover-button-color);
+                background-color: var(--home-banners-dark-hover-button-bg-color);
+            }
+        }
+    }
+
+    &__item-full-overlay {
+        .#{$component-name}__overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: #fff;
+            background: linear-gradient(90deg, transparent 0%, var(--home-banners-overlay-bg-color) 56%);
+            top: 0;
+            left: 0;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            border-radius: 8px;
+        }
+
+        &.#{$component-name}__theme-dark {
+            .#{$component-name}__content {
+                background-color: transparent;
+            }
+        }
     }
 }

@@ -1,27 +1,35 @@
 {$homeBanners = 'home-banners'}
 
-<section class="{$homeBanners}__container">
+<section class="{$homeBanners}">
     <div class="container sami-container">
         {foreach from=$banners item=banner}
             <div class="{$homeBanners}__item {$homeBanners}__item-{$banner.display_mode}
-                        align-x-{$banner.text_position_x} 
-                        align-y-{$banner.text_position_y}"
+                        {$homeBanners}__align-x-{$banner.text_position_x} 
+                        {$homeBanners}__align-y-{$banner.text_position_y} 
+                        {$homeBanners}__theme-{$banner.text_theme}"
                  style="{if $banner.background_type == 'color'}
                             background-color: {$banner.background_color};
-                        {elseif $banner.background_image}
+                        {elseif $banner.background_image && $banner.display_mode != 'full'}
                             background-image: url('{$module_dir}views/img/{$banner.background_image}');
                         {/if}">
-                
+                {if $banner.display_mode == 'full'}
+                    <img class="{$homeBanners}__full-image" src="{$module_dir}views/img/{$banner.background_image}">
+                {/if}
+                {if $banner.display_mode == 'full-overlay'}
+                    <div class="{$homeBanners}__overlay"></div>
+                {/if}
                 <div class="{$homeBanners}__content">
-                    {if $banner.title}
-                        <h2 class="{$homeBanners}__title">{$banner.title|escape:'html':'UTF-8'}</h2>
-                    {/if}
-                    
-                    {if $banner.text}
-                        <div class="{$homeBanners}__text">
-                            {$banner.text|nl2br nofilter}
-                        </div>
-                    {/if}
+                    <div class="{$homeBanners}__text-wrapper">
+                        {if $banner.title}
+                            <h4 class="{$homeBanners}__title">{$banner.title|escape:'html':'UTF-8'}</h4>
+                        {/if}
+                        
+                        {if $banner.text}
+                            <div class="{$homeBanners}__text">
+                                {$banner.text|nl2br nofilter}
+                            </div>
+                        {/if}
+                    </div>
                     
                     {if $banner.button_enabled && $banner.button_text && $banner.button_link}
                         <div class="{$homeBanners}__button-wrapper">

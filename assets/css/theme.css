@@ -16528,6 +16528,7 @@ label .color.active, label .color:hover,
   top: 0;
   height: 100%;
   pointer-events: none;
+  max-width: 1920px;
 }
 .home-slider__hider {
   width: 330px;
@@ -16614,6 +16615,54 @@ label .color.active, label .color:hover,
 .home-slider .embla__button__svg {
   width: 35%;
   height: 35%;
+}
+
+.home-about-us {
+  --home-about-us-title-color: #402120;
+  --home-about-us-desc-color: #ffffff;
+  --home-about-us-bg-color: #B9713F;
+  margin: 40px 0;
+}
+.home-about-us__container {
+  display: flex;
+  flex-direction: row;
+}
+.home-about-us__image-wrapper {
+  max-width: 560px;
+  overflow: clip;
+  width: 100%;
+  height: auto;
+  border-radius: 8px 0 0 8px;
+}
+.home-about-us__image-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home-about-us__content {
+  max-width: 720px;
+  padding: 35px 80px 55px;
+  width: 100%;
+  background-color: var(--home-about-us-bg-color);
+  border-radius: 0 8px 8px 0;
+}
+.home-about-us__title {
+  color: var(--home-about-us-title-color);
+  font-size: 36px;
+  line-height: normal;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.home-about-us__description {
+  color: var(--home-about-us-desc-color);
+  font-size: 16px;
+  line-height: normal;
+  font-weight: normal;
+  margin: 0;
+}
+.home-about-us__description * {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
 }
 
 .home-banners {

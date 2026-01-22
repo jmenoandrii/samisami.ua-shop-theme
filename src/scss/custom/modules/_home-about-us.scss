@@ -1,0 +1,56 @@
+$component-name: home-about-us;
+
+.#{$component-name} {
+    --home-about-us-title-color: #{$brown-color};
+    --home-about-us-desc-color: #{$white-color};
+    --home-about-us-bg-color: #{$dark-yellow-color};
+
+    margin: 40px 0;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__image-wrapper {
+        max-width: 560px;
+        overflow: clip;
+        width: 100%;
+        height: auto;
+        border-radius: 8px 0 0 8px;
+    }
+
+    &__image-wrapper img {
+        object-fit: cover;
+    }
+
+    &__content {
+        max-width: 720px;
+        padding: 35px 80px 55px;
+        width: 100%;
+        background-color: var(--home-about-us-bg-color);
+        border-radius: 0 8px 8px 0;
+    }
+
+    &__title {
+        color: var(--home-about-us-title-color);
+        font-size: 36px;
+        line-height: normal;
+        font-weight: bold;
+        margin-bottom: 24px;
+    }
+
+    &__description {
+        color: var(--home-about-us-desc-color);
+        font-size: 16px;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    &__description * {
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+}

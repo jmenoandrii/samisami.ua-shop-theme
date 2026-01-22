@@ -106,6 +106,7 @@ $component-name: home-slider;
     top: 0;
     height: 100%;
     pointer-events: none;
+    max-width: 1920px;
   }
 
   &__hider {

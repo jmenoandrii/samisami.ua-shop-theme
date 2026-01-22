@@ -23,7 +23,7 @@
     </section>
   {/block}
 
-  {block name='page_footer_container'}
+  {block name='page_footer_container' hide}
     <footer class="page-footer">
       {block name='page_footer'}
           <!-- Footer content -->

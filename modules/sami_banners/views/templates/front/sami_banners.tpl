@@ -4,8 +4,9 @@
     <div class="container sami-container">
         {foreach from=$banners item=banner}
             <div class="{$homeBanners}__item {$homeBanners}__item-{$banner.display_mode}
+                        {$homeBanners}__align-img-x-{$banner.image_position_x} 
+                        {$homeBanners}__align-img-y-{$banner.image_position_y}
                         {$homeBanners}__align-x-{$banner.text_position_x} 
-                        {$homeBanners}__align-y-{$banner.text_position_y} 
                         {$homeBanners}__theme-{$banner.text_theme}"
                  style="{if $banner.background_type == 'color'}
                             background-color: {$banner.background_color};

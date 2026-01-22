@@ -16230,7 +16230,7 @@ __webpack_require__.r(__webpack_exports__);
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1769024626045
+        // 1769065731686
         var cssReload = __webpack_require__("./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {});
         // only invalidate when locals change
         if (
@@ -16346,7 +16346,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("d073e077608365cc5570")
+/******/ 		__webpack_require__.h = () => ("4571394931bcce82f5a1")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -16816,7 +16816,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "null:nullnull";
+/******/ 		__webpack_require__.p = "http://localhost:3506//themes/samisami/assets/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/css loading */

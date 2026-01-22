@@ -16662,6 +16662,24 @@ label .color.active, label .color:hover,
   max-width: 530px;
   padding: 30px 45px;
 }
+.home-banners__align-img-x-left {
+  background-position-x: left;
+}
+.home-banners__align-img-x-center {
+  background-position-x: center;
+}
+.home-banners__align-img-x-right {
+  background-position-x: right;
+}
+.home-banners__align-img-y-top {
+  background-position-y: top;
+}
+.home-banners__align-img-y-center {
+  background-position-y: center;
+}
+.home-banners__align-img-y-bottom {
+  background-position-y: bottom;
+}
 .home-banners__align-x-left .home-banners__content {
   text-align: start;
   justify-content: start;

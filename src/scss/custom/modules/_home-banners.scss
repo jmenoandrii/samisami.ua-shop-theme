@@ -56,6 +56,30 @@ $component-name: home-banners;
         padding: 30px 45px;
     }
 
+    &__align-img-x-left {
+        background-position-x: left;
+    }
+
+    &__align-img-x-center {
+        background-position-x: center;
+    }
+
+    &__align-img-x-right {
+        background-position-x: right;
+    }
+
+    &__align-img-y-top {
+        background-position-y: top;
+    }
+
+    &__align-img-y-center {
+        background-position-y: center;
+    }
+
+    &__align-img-y-bottom {
+        background-position-y: bottom;
+    }
+
     &__align-x-left &__content {
         text-align: start;
         justify-content: start;

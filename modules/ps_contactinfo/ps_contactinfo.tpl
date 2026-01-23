@@ -3,7 +3,7 @@
  * file that was distributed with this source code.
  *}
 
-<div class="footer__block block-contact col-md-6 col-lg-3">
+<div class="footer__block block-contact">
 
   <p class="footer__block__title d-none d-md-flex">{l s='Store information' d='Shop.Theme.Global'}</p>
 

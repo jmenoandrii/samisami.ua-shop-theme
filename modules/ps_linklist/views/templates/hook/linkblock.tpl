@@ -3,7 +3,7 @@
  * file that was distributed with this source code.
  *}
 {foreach $linkBlocks as $linkBlock}
-  <div class="footer__block col-md-6 col-lg-3">
+  <div class="footer__block">
 
     <p class="footer__block__title d-none d-md-flex">{$linkBlock.title}</p>
 

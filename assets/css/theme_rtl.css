@@ -17436,6 +17436,7 @@ label .color.active, label .color:hover,
   --footer-email-hover-btn-bg-color: #D58849;
   --footer-title-color: #F2A055;
   --footer-link-color: #ffffff;
+  --footer-link-hover-color: #F2A055;
 }
 .footer .footer__main {
   padding: 35px 0 15px;
@@ -17540,6 +17541,9 @@ label .color.active, label .color:hover,
   font-weight: normal;
   line-height: normal;
   color: var(--footer-link-color);
+}
+.footer .footer__block-content a:hover {
+  color: var(--footer-link-hover-color);
 }
 
 .content-columns {

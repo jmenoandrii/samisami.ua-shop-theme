@@ -18,6 +18,8 @@ $component-name: footer;
   --footer-title-color: #{$yellow-color};
   --footer-link-color: #{$white-color};
 
+  --footer-link-hover-color: #{$yellow-color};
+
   & &__main {
     padding: 35px 0 15px;
     background: var(--footer-background-color);
@@ -138,6 +140,10 @@ $component-name: footer;
         font-weight: normal;
         line-height: normal;
         color: var(--footer-link-color);
+
+        &:hover {
+          color: var(--footer-link-hover-color);
+        }
       }
     }
   }

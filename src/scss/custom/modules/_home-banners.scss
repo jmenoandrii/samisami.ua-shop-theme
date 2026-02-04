@@ -1,21 +1,21 @@
 $component-name: home-banners;
 
 .#{$component-name} {
-    --home-banners-color: #{$brown-color};
-    --home-banners-button-color: #{$white-color};
-    --home-banners-button-bg-color: #{$brown-color};
-    --home-banners-overlay-bg-color: #{$dark-yellow-color};
+    --home-banners-color: #{$primary-brown};
+    --home-banners-button-color: #{$primary-white};
+    --home-banners-button-bg-color: #{$primary-brown};
+    --home-banners-overlay-bg-color: #{$accent-yellow};
 
-    --home-banners-hover-button-color: #{$white-color};
-    --home-banners-hover-button-bg-color: #{$dark-brown-color};
+    --home-banners-hover-button-color: #{$primary-white};
+    --home-banners-hover-button-bg-color: #{$accent-brown};
 
-    --home-banners-dark-color: #{$white-color};
-    --home-banners-dark-bg-color: #{$brown-color};
-    --home-banners-dark-button-color: #{$brown-color};
-    --home-banners-dark-button-bg-color: #{$yellow-color};
+    --home-banners-dark-color: #{$primary-white};
+    --home-banners-dark-bg-color: #{$primary-brown};
+    --home-banners-dark-button-color: #{$primary-brown};
+    --home-banners-dark-button-bg-color: #{$primary-yellow};
 
-    --home-banners-dark-hover-button-color: #{$brown-color};
-    --home-banners-dark-hover-button-bg-color: #{$hover-yellow-color};
+    --home-banners-dark-hover-button-color: #{$primary-brown};
+    --home-banners-dark-hover-button-bg-color: #{$secondary-yellow};
 
     margin: 20px 0 80px;
 

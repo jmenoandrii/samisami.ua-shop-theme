@@ -6,23 +6,23 @@ $component-name: home-categories-list;
 }
 
 .#{$component-name} {
-  --home-categories-list-bg-color: #{$white-color};
-  --home-categories-list-hover-bg-color: #{$hover-white-color};
-  --home-categories-list-active-bg-color: #{$brown-color};
+  --home-categories-list-bg-color: #{$primary-white};
+  --home-categories-list-hover-bg-color: #{$secondary-white};
+  --home-categories-list-active-bg-color: #{$primary-brown};
 
-  --home-categories-list-arrow-color: #{$white-color};
-  --home-categories-list-arrow-bg-color: #{$brown-color};
-  --home-categories-list-hover-arrow-color: #{$white-color};
-  --home-categories-list-hover-arrow-bg-color: #{$dark-yellow-color};
+  --home-categories-list-arrow-color: #{$primary-white};
+  --home-categories-list-arrow-bg-color: #{$primary-brown};
+  --home-categories-list-hover-arrow-color: #{$primary-white};
+  --home-categories-list-hover-arrow-bg-color: #{$accent-yellow};
 
-  --home-categories-list-span-color: #{$brown-color};
-  --home-categories-list-active-span-color: #{$yellow-color};
-  --home-categories-list-active-icon-color: #{$yellow-color};
+  --home-categories-list-span-color: #{$primary-brown};
+  --home-categories-list-active-span-color: #{$primary-yellow};
+  --home-categories-list-active-icon-color: #{$primary-yellow};
 
-  --home-categories-list-button-color: #{$brown-color};
-  --home-categories-list-button-bg-color: #{$yellow-color};
-  --home-categories-list-hover-button-color: #{$brown-color};
-  --home-categories-list-hover-button-bg-color: #{$hover-yellow-color};
+  --home-categories-list-button-color: #{$primary-brown};
+  --home-categories-list-button-bg-color: #{$primary-yellow};
+  --home-categories-list-hover-button-color: #{$primary-brown};
+  --home-categories-list-hover-button-bg-color: #{$secondary-yellow};
 
   --home-categories-list-hider-bg-color: #{$gray-color};
   position: relative;

@@ -6,19 +6,19 @@ $component-name: home-slider;
 }
 
 .#{$component-name} {
-  --home-slider-arrow-color: #{$white-color};
-  --home-slider-arrow-bg-color: #{$brown-color};
-  --home-slider-hover-arrow-color: #{$white-color};
-  --home-slider-hover-arrow-bg-color: #{$dark-yellow-color};
+  --home-slider-arrow-color: #{$primary-white};
+  --home-slider-arrow-bg-color: #{$primary-brown};
+  --home-slider-hover-arrow-color: #{$primary-white};
+  --home-slider-hover-arrow-bg-color: #{$accent-yellow};
 
-  --home-slider-backdrop-color: #{$dark-yellow-color};
-  --home-slider-title-color: #{$white-color};
-  --home-slider-description-color: #{$white-color};
+  --home-slider-backdrop-color: #{$accent-yellow};
+  --home-slider-title-color: #{$primary-white};
+  --home-slider-description-color: #{$primary-white};
 
-  --home-slider-button-color: #{$brown-color};
-  --home-slider-button-bg-color: #{$yellow-color};
-  --home-slider-hover-button-color: #{$brown-color};
-  --home-slider-hover-button-bg-color: #{$hover-yellow-color};
+  --home-slider-button-color: #{$primary-brown};
+  --home-slider-button-bg-color: #{$primary-yellow};
+  --home-slider-hover-button-color: #{$primary-brown};
+  --home-slider-hover-button-bg-color: #{$secondary-yellow};
 
   --home-slider-hider-bg-color: #{$gray-color};
 

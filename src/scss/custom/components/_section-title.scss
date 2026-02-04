@@ -2,9 +2,9 @@ $component-name: section-title;
 
 .#{$component-name} {
   &__container {
-    --section-title-color: #{$brown-color};
-    --section-title-link-color: #{$brown-color};
-    --section-title-hover-link-color: #{$dark-brown-color};
+    --section-title-color: #{$primary-brown};
+    --section-title-link-color: #{$primary-brown};
+    --section-title-hover-link-color: #{$accent-brown};
     
     display: flex;
     align-items: end;

@@ -10,13 +10,13 @@
 }
 
 .badge {
-  --flag-badge-color: #{$white-color};
-  --flag-classic-badge-bg-color: #{$brown-color};
-  --flag-on-sale-badge-bg-color: #{$dark-yellow-color};
-  --flag-new-badge-bg-color: #{$yellow-color};
-  --flag-new-badge-text-color: #{$brown-color};
-  --flag-hot-bg-color: #{$cream-color};
-  --flag-hot-text-color: #{$brown-color};
+  --flag-badge-color: #{$primary-white};
+  --flag-classic-badge-bg-color: #{$primary-brown};
+  --flag-on-sale-badge-bg-color: #{$accent-yellow};
+  --flag-new-badge-bg-color: #{$primary-yellow};
+  --flag-new-badge-text-color: #{$primary-brown};
+  --flag-hot-bg-color: #{$primary-cream};
+  --flag-hot-text-color: #{$primary-brown};
 
   color: var(--flag-badge-color);
   margin-right: 5px;

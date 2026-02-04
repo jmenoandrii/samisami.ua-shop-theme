@@ -7,7 +7,7 @@
 
   <p class="footer__block-title">{l s='Store information' d='Shop.Theme.Global'}</p>
 
-  <div id="contact-infos" class="footer__block-content footer__block-content-contact">
+  <div id="contact-infos" class="footer__block-content footer__contact-content">
     {if $contact_infos.phone}
       <div class="footer__contact-phone">
         <a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a>

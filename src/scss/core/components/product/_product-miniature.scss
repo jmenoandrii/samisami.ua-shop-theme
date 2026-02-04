@@ -1,18 +1,18 @@
 $component-name: product-miniature;
 
 .#{$component-name} {
-  --product-text-color: #{$brown-color};
-  --product-text-hover-color: #{$dark-brown-color};
+  --product-text-color: #{$primary-brown};
+  --product-text-hover-color: #{$accent-brown};
 
-  --product-star-color: #{$dark-yellow-color};
+  --product-star-color: #{$accent-yellow};
 
-  --product-price-color: #{$yellow-color};
-  --product-discount-price-color: #{$dark-white-color};
+  --product-price-color: #{$primary-yellow};
+  --product-discount-price-color: #{$accent-white};
 
-  --product-view-link-bg-color: #{$white-color};
-  --product-view-link-icon-color: #{$brown-color};
-  --product-view-link-hover-icon-color: #{$dark-white-color};
-  --product-view-link-active-icon-color: #{$brown-color};
+  --product-view-link-bg-color: #{$primary-white};
+  --product-view-link-icon-color: #{$primary-brown};
+  --product-view-link-hover-icon-color: #{$accent-white};
+  --product-view-link-active-icon-color: #{$primary-brown};
 
   margin-bottom: 20px;
   padding: 0;

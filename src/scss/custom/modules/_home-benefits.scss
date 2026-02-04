@@ -1,9 +1,9 @@
 $component-name: home-benefits;
 
 .#{$component-name} {
-    --home-benefits-bg-color-1: #{$yellow-color};
-    --home-benefits-bg-color-2: #{$dark-yellow-color};
-    --home-benefits-color: #{$white-color};
+    --home-benefits-bg-color-1: #{$primary-yellow};
+    --home-benefits-bg-color-2: #{$accent-yellow};
+    --home-benefits-color: #{$primary-white};
 
     @property --gradient-angle {
         syntax: '<angle>';

@@ -1,9 +1,9 @@
 $component-name: home-about-us;
 
 .#{$component-name} {
-    --home-about-us-title-color: #{$brown-color};
-    --home-about-us-desc-color: #{$white-color};
-    --home-about-us-bg-color: #{$dark-yellow-color};
+    --home-about-us-title-color: #{$primary-brown};
+    --home-about-us-desc-color: #{$primary-white};
+    --home-about-us-bg-color: #{$accent-yellow};
 
     margin: 40px 0;
 

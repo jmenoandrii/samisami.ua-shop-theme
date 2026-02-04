@@ -1,24 +1,34 @@
 $component-name: footer;
 
 .#{$component-name} {
-  --footer-background-color: #{$brown-color};
+  --footer-background-color: #{$primary-brown};
 
-  --footer-email-title-color: #{$yellow-color};
-  --footer-email-caption-color: #{$white-color};
-  --footer-email-heading-color: #{$white-color};
+  --footer-email-title-color: #{$primary-yellow};
+  --footer-email-caption-color: #{$primary-white};
+  --footer-email-heading-color: #{$primary-white};
 
-  --footer-email-input-color: #{$white-color};
-  --footer-email-input-bg-color: #{$dark-yellow-color};
-  --footer-email-hover-input-bg-color: #{$dark-brown-color};
+  --footer-email-input-color: #{$primary-white};
+  --footer-email-input-bg-color: #{$accent-yellow};
+  --footer-email-hover-input-bg-color: #{$accent-brown};
 
-  --footer-email-btn-color: #{$brown-color};
-  --footer-email-btn-bg-color: #{$yellow-color};
-  --footer-email-hover-btn-bg-color: #{$hover-yellow-color};
+  --footer-email-btn-color: #{$primary-brown};
+  --footer-email-btn-bg-color: #{$primary-yellow};
+  --footer-email-hover-btn-bg-color: #{$secondary-yellow};
 
-  --footer-title-color: #{$yellow-color};
-  --footer-link-color: #{$white-color};
+  --footer-title-color: #{$primary-yellow};
+  --footer-link-color: #{$primary-white};
+  --footer-phone-color: #{$primary-yellow};
+  --footer-timetable-title-color: #{$accent-white};
+  --footer-timetable-color: #{$primary-white};
+  --footer-email-color: #{$primary-yellow};
 
-  --footer-link-hover-color: #{$yellow-color};
+  --footer-copyright-text-color: #{$tertiary-yellow};
+  --footer-social-color: #{$primary-yellow};
+
+  --footer-link-hover-color: #{$primary-yellow};
+  --footer-phone-hover-color: #{$secondary-yellow};
+  --footer-email-hover-color: #{$secondary-yellow};
+  --footer-social-hover-color: #{$secondary-yellow};
 
   & &__main {
     padding: 35px 0 15px;
@@ -36,6 +46,13 @@ $component-name: footer;
       justify-content: space-between;
       width: 100%;
       padding: 18px 0;
+    }
+
+    &-bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
   }
   
@@ -148,4 +165,91 @@ $component-name: footer;
     }
   }
 
+  & &__contact {
+    max-width: 216px;
+
+    &-content {
+      gap: 0px;
+    }
+
+    &-phone {
+      margin-bottom: 6px;
+      a {
+        color: var(--footer-phone-color);
+        font-size: 16px;
+        font-weight: bold;
+        line-height: normal;
+
+        &:hover {
+          color: var(--footer-phone-hover-color);
+        }
+      }
+    }
+
+    &-timetable-title {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: normal;
+      color: var(--footer-timetable-title-color);
+      margin-bottom: 12px;
+      margin-top: 12px;
+    }
+
+    &-timetable {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: normal;
+      color: var(--footer-timetable-color);
+      margin-bottom: 12px;
+    }
+
+    &-email {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        font-size: 22px;
+        color: var(--footer-email-color);
+        transition: 0.25s color ease-out;
+      }
+      
+      a {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: normal;
+        color: var(--footer-email-color);
+      }
+
+      &:hover {
+        a, i {
+          color: var(--footer-email-hover-color);
+        }
+      }
+    }
+  }
+
+  &__copyright p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: normal;
+    color: var(--footer-copyright-text-color);
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    a {
+      font-size: 29px;
+      color: var(--footer-social-color);
+      transition: 0.25s color ease-out;
+
+      &:hover {
+        color: var(--footer-social-hover-color);
+      }
+    }
+  }
 }

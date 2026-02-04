@@ -1,8 +1,8 @@
 $component-name: header-top;
 
 .#{$component-name} {
-  --header-top-bg: #{$brown-color};
-  --header-top-color: #{$white-color};
+  --header-top-bg: #{$primary-brown};
+  --header-top-color: #{$primary-white};
   background-color: var(--header-top-bg);
 
   a {

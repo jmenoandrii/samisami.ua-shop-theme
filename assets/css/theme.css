@@ -16296,8 +16296,8 @@ label .color.active, label .color:hover,
 }
 .email-subscription .email-subscription__content__inputs input[type=email] {
   margin-right: 0.5rem;
-  color: var(--bs-gray-300);
-  border: 1px solid var(--bs-gray-300);
+  color: #343a40;
+  border: 1px solid #343a40;
 }
 .email-subscription .email-subscription__content__inputs .btn-primary {
   color: var(--bs-white);
@@ -17436,7 +17436,16 @@ label .color.active, label .color:hover,
   --footer-email-hover-btn-bg-color: #D58849;
   --footer-title-color: #F2A055;
   --footer-link-color: #ffffff;
+  --footer-phone-color: #F2A055;
+  --footer-timetable-title-color: #9F908F;
+  --footer-timetable-color: #ffffff;
+  --footer-email-color: #F2A055;
+  --footer-copyright-text-color: #99613A;
+  --footer-social-color: #F2A055;
   --footer-link-hover-color: #F2A055;
+  --footer-phone-hover-color: #D58849;
+  --footer-email-hover-color: #D58849;
+  --footer-social-hover-color: #D58849;
 }
 .footer .footer__main {
   padding: 35px 0 15px;
@@ -17453,6 +17462,12 @@ label .color.active, label .color:hover,
   justify-content: space-between;
   width: 100%;
   padding: 18px 0;
+}
+.footer .footer__main-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer__email-subscription {
   max-width: 213px;
@@ -17544,6 +17559,77 @@ label .color.active, label .color:hover,
 }
 .footer .footer__block-content a:hover {
   color: var(--footer-link-hover-color);
+}
+.footer .footer__contact {
+  max-width: 216px;
+}
+.footer .footer__contact-content {
+  gap: 0px;
+}
+.footer .footer__contact-phone {
+  margin-bottom: 6px;
+}
+.footer .footer__contact-phone a {
+  color: var(--footer-phone-color);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+}
+.footer .footer__contact-phone a:hover {
+  color: var(--footer-phone-hover-color);
+}
+.footer .footer__contact-timetable-title {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  color: var(--footer-timetable-title-color);
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+.footer .footer__contact-timetable {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  color: var(--footer-timetable-color);
+  margin-bottom: 12px;
+}
+.footer .footer__contact-email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer .footer__contact-email i {
+  font-size: 22px;
+  color: var(--footer-email-color);
+  transition: 0.25s color ease-out;
+}
+.footer .footer__contact-email a {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  color: var(--footer-email-color);
+}
+.footer .footer__contact-email:hover a, .footer .footer__contact-email:hover i {
+  color: var(--footer-email-hover-color);
+}
+.footer__copyright p {
+  margin: 0;
+  font-size: 14px;
+  line-height: normal;
+  color: var(--footer-copyright-text-color);
+}
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.footer__social a {
+  font-size: 29px;
+  color: var(--footer-social-color);
+  transition: 0.25s color ease-out;
+}
+.footer__social a:hover {
+  color: var(--footer-social-hover-color);
 }
 
 .content-columns {

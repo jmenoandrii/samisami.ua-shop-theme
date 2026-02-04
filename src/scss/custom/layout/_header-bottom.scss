@@ -1,26 +1,26 @@
 $component-name: header-bottom;
 
 .#{$component-name} {
-  --header-bg-color: #{$white-color};
+  --header-bg-color: #{$primary-white};
 
-  --header-catalog-bg-color: #{$brown-color};
-  --header-catalog-color: #{$cream-color};
-  --header-hover-catalog-bg-color: #{$dark-yellow-color};
-  --header-hover-catalog-color: #{$cream-color};
-  --header-active-catalog-bg-color: #{$yellow-color};
-  --header-active-catalog-color: #{$brown-color};
+  --header-catalog-bg-color: #{$primary-brown};
+  --header-catalog-color: #{$primary-cream};
+  --header-hover-catalog-bg-color: #{$accent-yellow};
+  --header-hover-catalog-color: #{$primary-cream};
+  --header-active-catalog-bg-color: #{$primary-yellow};
+  --header-active-catalog-color: #{$primary-brown};
 
-  --header-search-bg-color: #{$white-color};
-  --header-search-border-color: #{$brown-color};
-  --header-search-color: #{$brown-color};
-  --header-hover-search-color: #{$dark-brown-color};
+  --header-search-bg-color: #{$primary-white};
+  --header-search-border-color: #{$primary-brown};
+  --header-search-color: #{$primary-brown};
+  --header-hover-search-color: #{$accent-brown};
 
-  --header-icons-color: #{$brown-color};
-  --header-hover-icons-color: #{$dark-white-color};
-  --header-active-icons-color: #{$brown-color};
+  --header-icons-color: #{$primary-brown};
+  --header-hover-icons-color: #{$accent-white};
+  --header-active-icons-color: #{$primary-brown};
 
-  --header-cart-badge-bg-color: #{$dark-yellow-color};
-  --header-cart-badge-color: #{$white-color};
+  --header-cart-badge-bg-color: #{$accent-yellow};
+  --header-cart-badge-color: #{$primary-white};
 
   padding: 0;
   position: absolute;

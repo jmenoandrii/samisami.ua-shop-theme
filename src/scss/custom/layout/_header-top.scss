@@ -1,8 +1,8 @@
 $component-name: header-top;
 
 .#{$component-name} {
-  --header-links-color: #{$white-color};
-  --header-hover-links-color: #{$dark-yellow-color};
+  --header-links-color: #{$primary-white};
+  --header-hover-links-color: #{$accent-yellow};
   position: relative;
   z-index: 1030;
 

@@ -2,28 +2,39 @@ $component-name: footer;
 
 .#{$component-name} {
   --footer-background-color: #{$brown-color};
+
+  --footer-email-title-color: #{$yellow-color};
+  --footer-email-caption-color: #{$white-color};
+  --footer-email-heading-color: #{$white-color};
+
+  --footer-email-input-color: #{$white-color};
+  --footer-email-input-bg-color: #{$dark-yellow-color};
+  --footer-email-hover-input-bg-color: #{$dark-brown-color};
+
+  --footer-email-btn-color: #{$brown-color};
+  --footer-email-btn-bg-color: #{$yellow-color};
+  --footer-email-hover-btn-bg-color: #{$hover-yellow-color};
+
   --footer-title-color: #{$yellow-color};
-  --footer-caption-color: #{$white-color};
-  --footer-heading-color: #{$white-color};
-
-  --footer-input-color: #{$white-color};
-  --footer-input-bg-color: #{$dark-yellow-color};
-  --footer-hover-input-bg-color: #{$dark-brown-color};
-
-  --footer-btn-color: #{$brown-color};
-  --footer-btn-bg-color: #{$yellow-color};
-  --footer-hover-btn-bg-color: #{$hover-yellow-color};
+  --footer-link-color: #{$white-color};
 
   & &__main {
     padding: 35px 0 15px;
     background: var(--footer-background-color);
-  }
 
-  &__main-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 50px;
+    &-top {
+      display: flex;
+      flex-direction: row;
+      gap: 106px;
+      padding-bottom: 50px;
+    }
+
+    &-middle {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 18px 0;
+    }
   }
   
   &__email-subscription {
@@ -48,7 +59,7 @@ $component-name: footer;
           font-size: 12px;
           line-height: normal;
           font-weight: normal;
-          color: var(--footer-caption-color);
+          color: var(--footer-email-caption-color);
           display: inline-flex;
           flex-direction: column;
           gap: 5px;
@@ -58,7 +69,7 @@ $component-name: footer;
             font-size: 16px;
             line-height: normal;
             font-weight: normal;
-            color: var(--footer-title-color);
+            color: var(--footer-email-title-color);
           }
         }
       }
@@ -75,14 +86,14 @@ $component-name: footer;
         line-height: normal;
         font-size: 12px;
         font-weight: normal;
-        color: var(--footer-input-color);
-        background-color: var(--footer-input-bg-color);
+        color: var(--footer-email-input-color);
+        background-color: var(--footer-email-input-bg-color);
         border: none;
         border-radius: 8px;
 
         &:focus {
-          color: var(--footer-input-color);
-          background-color: var(--footer-hover-input-bg-color);
+          color: var(--footer-email-input-color);
+          background-color: var(--footer-email-hover-input-bg-color);
           box-shadow: none;
         }
       }
@@ -93,14 +104,14 @@ $component-name: footer;
         line-height: normal;
         font-size: 16px;
         font-weight: normal;
-        color: var(--footer-btn-color);
-        background-color: var(--footer-btn-bg-color);
+        color: var(--footer-email-btn-color);
+        background-color: var(--footer-email-btn-bg-color);
         border: none;
         border-radius: 8px;
 
         &:hover {
-          color: var(--footer-btn-color);
-          background-color: var(--footer-hover-btn-bg-color);
+          color: var(--footer-email-btn-color);
+          background-color: var(--footer-email-hover-btn-bg-color);
           box-shadow: none;
         }
       }
@@ -108,105 +119,27 @@ $component-name: footer;
   }
 
   & &__block {
-
-    &__content {
-      padding-top: 0.5rem;
-      color: var(--footer-text-color);
+    &-title {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 15px;
+      color: var(--footer-title-color);
     }
 
-    @include media-breakpoint-down(md) {
-      &__content {
-        font-size: 0.875rem;
-      }
-    }
-
-    &__content-list {
-
+    &-content {
       margin-bottom: 0;
+      gap: 12px;
+      display: flex;
+      flex-direction: column;
 
       a {
-        display: block;
-        padding: 0.25rem;
-        padding-left: 0;
-        color: var(--footer-text-color);
-        transition: 0.25s ease-out;
-
-        &:hover {
-          color: var(--footer-hover-color);
-        }
-
-        &.logout {
-          color: #d5343c;
-        }
-
-      }
-
-      @include media-breakpoint-down(md) {
-        a {
-          padding: 0.5rem;
-          padding-left: 0;
-        }
-      }
-
-    }
-
-    &__content-contact {
-      a {
-        color: var(--footer-text-color);
-
-        &:hover {
-          color: var(--footer-hover-color);
-        }
-      }
-
-      .contact__infos {
-        margin-bottom: 1rem;
-      }
-
-      .contact__phone,
-      .contact__fax {
-        margin-bottom: 0.5rem;
-      }
-
-      > div:last-child {
-        margin-bottom: 0;
-      }
-
-      .contact__infos,
-      .contact__phone,
-      .contact__fax,
-      .contact__email {
-        display: flex;
-        align-items: center;
-
-        i {
-          margin-right: 0.5rem;
-        }
+        font-size: 16px;
+        font-weight: normal;
+        line-height: normal;
+        color: var(--footer-link-color);
       }
     }
-
-    &__title {
-      font-size: 1rem;
-      font-weight: 600;
-
-      &,
-      a {
-        color: var(--footer-heading-color);
-      }
-    }
-
-    @include media-breakpoint-up(md) {
-      &__title {
-        margin-bottom: 1.25rem;
-      }
-    }
-
-    @include media-breakpoint-down(md) {
-      &:last-child {
-        margin-bottom: 2rem;
-      }
-    }
-
   }
 
 }

@@ -10,9 +10,11 @@
       {block name='hook_footer_before'}
         {hook h='displayFooterBefore'}
       {/block}
+      <div class="{$footer}__main-middle">
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
+      </div>
     </div>
 
     <div class="{$footer}__main-bottom">

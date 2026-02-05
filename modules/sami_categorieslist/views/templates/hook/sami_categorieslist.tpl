@@ -12,7 +12,7 @@
                             <figure class="{$homeCategoriesListName}__content">
                                 <a href="{$category.link}">
                                     <picture>
-                                        <img src="{$category.image}" alt="{$category.name}"/>
+                                        <img src="{$category.thumbnail}" alt="{$category.name}"/>
                                     </picture>
                                     <figcaption>{$category.name}</figcaption>
                                 </a>

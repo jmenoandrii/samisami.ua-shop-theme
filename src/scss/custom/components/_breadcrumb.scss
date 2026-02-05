@@ -1,5 +1,46 @@
 $component-name: breadcrumb;
 
 .#{$component-name} {
-  margin: 0;
+  --breadcrumb-color: #{$primary-yellow};
+  --breadcrumb-active-color: #{$primary-white};
+  --breadcrumb-bg-color: #{$primary-brown};
+
+  --breadcrumb-hover-color: #{$secondary-yellow};
+
+  background-color: var(--breadcrumb-bg-color);
+  margin-bottom: 40px;
+
+  &-container {
+    margin: auto;
+    display: flex;
+    width: 100%;
+  }
+
+  &-item {
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;
+
+    span {
+      padding: 10px 0 7px;
+      color: var(--breadcrumb-active-color);
+    }
+  }
+
+  &-link {
+    padding: 10px 0 7px;
+    color: var(--breadcrumb-color);
+
+    &:hover {
+      color: var(--breadcrumb-hover-color);
+    }
+  }
+
+  &-item + &-item::before {
+    color: var(--breadcrumb-color);
+    content: ">";
+    float: left;
+    padding: 10px 5px 7px;
+  }
 }

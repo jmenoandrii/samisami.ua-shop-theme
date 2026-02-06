@@ -30,16 +30,17 @@
 
 {block name='content'}
   {* FIRST PART - PHOTO, NAME, PRICES, ADD TO CART*}
-  <div class="row g-4 g-xl-5 product js-product-container">
-    <div class="product__left col-lg-6 col-xl-7">
+  {$componentName = 'product'}
+  <div class="{$componentName} js-product-container">
+    <div class="{$componentName}__left">
       {block name='product_cover_thumbnails'}
         {include file='catalog/_partials/product-cover-thumbnails.tpl'}
       {/block}
     </div>
 
-    <div class="product__col col-lg-6 col-xl-5">
+    <div class="{$componentName}__right">
       {block name='product_header'}
-        <h1 class="h4 product__name">{block name='page_title'}{$product.name}{/block}</h1>
+        <h1 class="{$componentName}__name">{block name='page_title'}{$product.name}{/block}</h1>
       {/block}
 
       {block name='product_prices'}
@@ -47,16 +48,16 @@
       {/block}
 
       {block name='product_description_short'}
-        <div class="product__description-short rich-text">{$product.description_short nofilter}</div>
+        <div class="{$componentName}__description-short rich-text">{$product.description_short nofilter}</div>
       {/block}
 
-      {block name='product_customization'}
+      {block name='product_customization' hide}
         {if $product.is_customizable && count($product.customizations.fields)}
           {include file='catalog/_partials/product-customization.tpl' customizations=$product.customizations}
         {/if}
       {/block}
 
-      <div class="product__actions js-product-actions">
+      <div class="{$componentName}__actions js-product-actions">
         {block name='product_buy'}
           <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
             <input type="hidden" name="token" value="{$static_token}">

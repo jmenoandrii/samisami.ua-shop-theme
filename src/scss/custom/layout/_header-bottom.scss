@@ -170,6 +170,11 @@ $component-name: header-bottom;
     a.action-btn {
       position: relative;
 
+      .action-cart-container {
+        position: relative;
+        display: inline-flex;
+      }
+
       span {
         display: flex;
       }
@@ -222,7 +227,10 @@ $component-name: header-bottom;
         background-color: var(--header-cart-badge-bg-color);
         color: var(--header-cart-badge-color); 
         border-radius: 50%;
-        padding: 1px 4px;
+        width: 17px;
+        height: 17px;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

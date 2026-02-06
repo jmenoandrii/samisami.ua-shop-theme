@@ -1,7 +1,103 @@
 .page-product {
-  .product {
+  $component-name: product;
+
+  .wrapper__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .#{$component-name} {
+    --product-bg-color: #{$primary-white};
+    --product-title-color: #{$primary-brown};
+    --product-discount-price-color: #{$accent-white};
+    --product-current-price-color: #{$accent-yellow};
+
+    --product-description-short-color: #{$primary-brown};
+    --product-variant-label-color: #{$primary-brown};
+
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    background-color: var(--product-bg-color);
+    border-radius: 8px 8px 0 0;
+    margin-top: 30px;
+
+    &__left {
+      max-width: 573px;
+      width: 100%;
+    }
+
+    &__right {
+      padding-left: 40px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
     &__name {
-      margin-bottom: 2rem;
+      margin-bottom: 20px;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: normal;
+      color: var(--product-title-color);
+    }
+
+    &__prices {
+      margin-bottom: 20px;
+      .prices__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .#{$component-name}__discount {
+          margin-right: 20px;
+          text-decoration: line-through;
+          color: var(--product-discount-price-color);
+          font-size: 20px;
+          font-weight: bold;
+          line-height: normal;
+
+        }
+
+        .#{$component-name}__current-price {
+          margin-right: 20px;
+          color: var(--product-current-price-color);
+          font-size: 36px;
+          font-weight: bold;
+          line-height: normal;
+        }
+      }
+    }
+
+    &__description-short {
+      position: relative;
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: auto 100%;
+        background-image: url("data:image/svg+xml;utf8, <svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1440 1%27> <path d=%27M1440 0.5L0 0.5%27 stroke=%27%23402120%27 stroke-linecap=%27round%27 stroke-dasharray=%277 7%27/> </svg>");
+      }
+
+      * {
+        margin: 0;
+        font-size: 16px!important;
+        font-weight: normal!important;
+        line-height: normal!important;
+        letter-spacing: normal!important;
+        text-transform: none!important;
+        background-color: transparent!important;
+        color: var(--product-description-short-color)!important;
+        font-family: inherit!important;
+      }
     }
 
     &__infos {
@@ -43,50 +139,38 @@
       }
     }
 
-    &__description-short {
-      margin-bottom: 1.5rem;
-    }
-
-    &__tax-info {
-      font-size: 0.875rem;
-      color: var(--bs-gray-600);
-    }
-
-    &__tax-label {
-      white-space: nowrap;
-    }
-
-    &__prices {
-      font-size: 1.25rem;
-    }
-
-    &__current-price {
-      font-size: 1.5rem;
-      font-weight: 600;
-      line-height: 2rem;
-    }
-
-    &__unit-price {
-      font-size: 0.875rem;
-      color: var(--bs-gray-600);
-    }
-
-    &__discount {
-      font-size: 1rem;
-      color: var(--bs-gray-600);
-    }
-
-    &__price-regular {
-      text-decoration: line-through;
-    }
-
-    &__pack-price {
-      font-size: 1rem;
-    }
-
     &__variants {
+      margin-top: 20px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: auto 100%;
+        background-image: url("data:image/svg+xml;utf8, <svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1440 1%27> <path d=%27M1440 0.5L0 0.5%27 stroke=%27%23402120%27 stroke-linecap=%27round%27 stroke-dasharray=%277 7%27/> </svg>");
+      }
+
       .variant {
-        margin-bottom: 1.5rem;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .form-label {
+          display: flex;
+          max-width: 170px;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: normal;
+          color: var(--product-variant-label-color);
+        }
 
         // RADIO
         .radio-variants {

@@ -5,10 +5,10 @@
 {extends file='layouts/layout-both-columns.tpl'}
 
 {block name='content_columns'}
-  <div class="{block name='container_class'}container{/block}">
+  <div class="{block name='container_class'}sami-container{/block}">
   {block name='left_column'}{/block}
   {block name='content_wrapper'}
-    <div id="content-wrapper" class="wrapper__content wrapper__content-full-width">
+    <div id="content-wrapper" class="wrapper__content">
       {hook h='displayContentWrapperTop'}
       {block name='content'}
         <p>Hello world! This is HTML5 Boilerplate.</p>

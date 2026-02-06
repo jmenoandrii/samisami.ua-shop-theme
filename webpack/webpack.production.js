@@ -1,4 +1,4 @@
-const { ESBuildMinifyPlugin } = require('esbuild-loader');
+const { EsbuildPlugin } = require('esbuild-loader');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { cleanDistFolders } = require('./webpack.parts');
@@ -11,9 +11,9 @@ exports.productionConfig = () => (
       optimization: {
         minimize: true,
         minimizer: [
-          new ESBuildMinifyPlugin({
+          new EsbuildPlugin({
             target: 'es2015',
-            format: 'iife'
+            minify: true
           }),
           new CssMinimizerPlugin()
         ],

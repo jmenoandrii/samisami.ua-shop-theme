@@ -8,7 +8,7 @@ html {
 
 body {
   --body-color: #{$primary-brown};
-  --body-bg-color: #{$gray-color};
+  --body-bg-color: #{$primary-gray};
 
   font-family: $font-family-base;
   color: var(---body-color);

@@ -15,6 +15,12 @@
     --product-description-short-color: #{$primary-brown};
     --product-variant-label-color: #{$primary-brown};
 
+    --product-variant-radio-color: #{$primary-brown};
+    --product-variant-radio-bg-color: #{$primary-gray};
+    --product-variant-radio-hover-bg-color: #{$secondary-white};
+    --product-varriant-radio-active-color: #{$primary-white};
+    --product-varriant-radio-active-bg-color: #{$primary-brown};
+
     display: flex;
     flex-direction: row;
     padding: 40px;
@@ -88,7 +94,7 @@
       }
 
       * {
-        margin: 0;
+        margin: 0!important;
         font-size: 16px!important;
         font-weight: normal!important;
         line-height: normal!important;
@@ -168,20 +174,62 @@
           max-width: 170px;
           font-size: 16px;
           font-weight: bold;
-          line-height: normal;
+          line-height: 32px;
           color: var(--product-variant-label-color);
+          margin: 0;
+          width: 100%;
         }
 
         // RADIO
         .radio-variants {
           display: flex;
           flex-wrap: wrap;
-          row-gap: 0.5rem;
-          column-gap: 0.875rem;
+          row-gap: 10px;
+          column-gap: 15px;
           margin-bottom: 0;
+          width: 100%;
+          justify-content: end;
 
           .radio-variant {
             margin: 0;
+            position: relative;
+            padding: 0;
+            min-height: unset;
+
+            label {
+              transition: 0.25s ease-out;
+              cursor: pointer;
+              padding: 7px 14px;
+              background-color: var(--product-variant-radio-bg-color);
+              border-radius: 12px;
+              
+              .radio-label {
+                font-size: 16px;
+                font-weight: bold;
+                line-height: normal;
+                color: var(--product-variant-radio-color);
+              }
+            }
+
+            &:hover {
+              label {
+                background-color: var(--product-variant-radio-hover-bg-color);
+              }
+            }
+
+            &.active {
+              label {
+                background-color: var(--product-varriant-radio-active-bg-color);
+
+                .radio-label {
+                  color: var(--product-varriant-radio-active-color);
+                }
+              }
+            }
+
+            .input-radio {
+              display: none;
+            }
           }
         }
 
@@ -189,8 +237,10 @@
         .color-variants {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.5rem;
+          gap: 10px;
           margin-bottom: 0;
+          width: 100%;
+          justify-content: end;
 
           .color-variant {
             .input-color {
@@ -204,6 +254,11 @@
 
             .color {
               margin: 0;
+              width: 34px;
+              height: 34px;
+              display: block;
+              border: none;
+              border-radius: 8px;
             }
           }
         }

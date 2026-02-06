@@ -22,7 +22,7 @@
       {elseif $group.group_type == 'color'}
         <ul id="group_{$id_attribute_group}" class="color-variants">
           {foreach from=$group.attributes key=id_attribute item=group_attribute}
-            <li class="color-variant">
+            <li class="color-variant {if $group_attribute.selected}active{/if}">
               <label aria-label="{$group_attribute.name}">
                 <input class="input-color" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                 <span
@@ -39,7 +39,7 @@
       {elseif $group.group_type == 'radio'}
         <ul id="group_{$id_attribute_group}" class="radio-variants">
           {foreach from=$group.attributes key=id_attribute item=group_attribute}
-            <li class="radio-variant form-check">
+            <li class="radio-variant form-check {if $group_attribute.selected}active{/if}">
               <label>
                 <input class="form-check-input input-radio" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                 <span class="form-check-label radio-label">{$group_attribute.name}</span>

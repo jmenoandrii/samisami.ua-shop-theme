@@ -181,6 +181,8 @@ $component-name: header-bottom;
 
       .action-icon{
         font-size: 40px;
+        overflow: visible;
+        display: inline-block;
 
         path {
           transition: fill .25s ease-out;

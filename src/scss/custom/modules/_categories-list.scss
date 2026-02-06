@@ -24,7 +24,7 @@ $component-name: home-categories-list;
   --home-categories-list-hover-button-color: #{$primary-brown};
   --home-categories-list-hover-button-bg-color: #{$secondary-yellow};
 
-  --home-categories-list-hider-bg-color: #{$gray-color};
+  --home-categories-list-hider-bg-color: #{$primary-gray};
   position: relative;
 
   &__content {
@@ -69,7 +69,7 @@ $component-name: home-categories-list;
     }
 
     img {
-      width: 90px;
+      width: 100px;
       height: 80px;
       object-fit: contain;
       display: block;

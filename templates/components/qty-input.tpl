@@ -3,10 +3,10 @@
  * file that was distributed with this source code.
  *}
 
-{assign var="increment_icon" value="E145"}
-{assign var="decrement_icon" value="E15B"}
-{assign var="submit_icon" value="E5CA"}
-{assign var="cancel_icon" value="E5CD"}
+{assign var="increment_icon" value="add"}
+{assign var="decrement_icon" value="remove"}
+{assign var="submit_icon" value="check"}
+{assign var="cancel_icon" value="close"}
 
 {* The spin button placement for RTL should be same as LTR *}
 {* To fix mirroring by CSS need to place them in reverse for RTL *}
@@ -18,10 +18,10 @@
   {assign var="append" value=["button"=>"increment", "icon"=>$increment_icon, "confirm_icon"=>$submit_icon]}
 {/if}
 
-<div class="input-group flex-nowrap{if isset($marginHelper)} {$marginHelper}{else} mb-3{/if}">
-  <button role="button" aria-label="{$prepend.button}" class="btn {$prepend.button} js-{$prepend.button}-button" type="button">
-    <i class="material-icons" aria-hidden="true">&#x{$prepend.icon};</i>
-    <i class="material-icons confirmation d-none">&#x{$prepend.confirm_icon};</i>
+<div class="sami-input-group">
+  <button role="button" aria-label="{$prepend.button}" class="{$prepend.button} js-{$prepend.button}-button" type="button">
+    <i class="material-symbols-outlined" aria-hidden="true">{$prepend.icon}</i>
+    <i class="material-symbols-outlined confirmation d-none">{$prepend.confirm_icon}</i>
     <div class="spinner-border spinner-border-sm align-middle d-none" role="status"></div>
   </button>
 
@@ -41,9 +41,9 @@
     {* End of default attributes *}
   />
 
-  <button role="button" aria-label="{$append.button}" class="btn {$append.button} js-{$append.button}-button" type="button">
-    <i class="material-icons" aria-hidden="true">&#x{$append.icon};</i>
-    <i class="material-icons confirmation d-none">&#x{$append.confirm_icon};</i>
+  <button role="button" aria-label="{$append.button}" class="{$append.button} js-{$append.button}-button" type="button">
+    <i class="material-symbols-outlined" aria-hidden="true">{$append.icon}</i>
+    <i class="material-symbols-outlined confirmation d-none">{$append.confirm_icon}</i>
     <div class="spinner-border spinner-border-sm align-middle d-none" role="status"></div>
   </button>
 </div>

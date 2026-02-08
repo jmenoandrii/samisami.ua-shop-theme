@@ -73,20 +73,21 @@
               </picture>
 
               <div class="product__images__modal-opener" data-bs-toggle="modal" data-bs-target="#product-modal">
-                <i class="material-icons zoom-in">search</i>
               </div>
             </div>
           {/foreach}
+
+          {hook h='displayProductActions' product=$product}
         {/block}
       </div>
     </div>
 
     {block name='product_images'}
       <div class="thumbnails__container">
-        <ul class="thumbnails__list row g-2">
+        <ul class="thumbnails__list">
           {foreach from=$product.images item=image key=key}
             <li
-              class="thumbnail js-thumb-container{if $image.id_image == $product.default_image.id_image} active{/if} col-3 col-md-2"
+              class="thumbnail js-thumb-container{if $image.id_image == $product.default_image.id_image} active{/if}"
               data-bs-target="#product-images"
               data-bs-slide-to="{$key}"
               {if $image.id_image == $product.default_image.id_image}
@@ -118,13 +119,12 @@
                   srcset="
                     {$image.bySize.default_xs.url},
                     {$image.bySize.default_m.url} 2x"
-                  width="{$image.bySize.default_xs.width}"
-                  height="{$image.bySize.default_xs.height}"
                   loading="lazy"
                   alt="{$image.legend}"
                   title="{$image.legend}"
                 >
               </picture>
+              <div class="thumbnail-overview"></div>
             </li>
           {/foreach}
         </ul>
@@ -132,6 +132,7 @@
     {/block}
 
     {hook h='displayAfterProductThumbs' product=$product}
+
   {else}
     <picture>
       {if isset($urls.no_picture_image.bySize.default_md.sources.avif)}

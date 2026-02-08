@@ -31,14 +31,14 @@
 {block name='content'}
   {* FIRST PART - PHOTO, NAME, PRICES, ADD TO CART*}
   {$componentName = 'product'}
-  <div class="{$componentName} js-product-container">
+  <div class="{$componentName} product-container js-product-container">
     <div class="{$componentName}__left">
       {block name='product_cover_thumbnails'}
         {include file='catalog/_partials/product-cover-thumbnails.tpl'}
       {/block}
     </div>
 
-    <div class="{$componentName}__right">
+    <div class="{$componentName}__right {$componentName}__col">
       {block name='product_header'}
         <h1 class="{$componentName}__name">{block name='page_title'}{$product.name}{/block}</h1>
       {/block}
@@ -82,7 +82,7 @@
               {include file='catalog/_partials/product-add-to-cart.tpl'}
             {/block}
 
-            {block name='product_additional_info'}
+            {block name='product_additional_info' hide}
               {include file='catalog/_partials/product-additional-info.tpl'}
             {/block}
 

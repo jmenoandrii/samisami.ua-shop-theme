@@ -4,7 +4,7 @@
  *}
 <div class="product__add-to-cart product-add-to-cart js-product-add-to-cart">
   {if !$configuration.is_catalog}
-    <div class="mb-3">
+    <div class="mb-3 d-none">
       {block name='product_availability'}
         <div id="product-availability" class="product-availability js-product-availability">
           {if $product.show_availability && $product.availability_message}
@@ -61,8 +61,8 @@
     </div>
 
     {block name='product_quantity'}
-      <div class="row g-2">
-        <div class="product-actions__quantity quantity-button js-quantity-button col-md-auto">
+      <div class="product-actions-container">
+        <div class="product-actions__quantity quantity-button js-quantity-button">
           {include file='components/qty-input.tpl'
             attributes=[
               "id" => "quantity_wanted",
@@ -73,25 +73,23 @@
           }
         </div>
 
-        <div class="product-actions__button add col">
+        <div class="product-actions__button add">
           <button
-            class="btn btn-primary btn-with-icon add-to-cart"
+            class="add-to-cart"
             data-button-action="add-to-cart"
             type="submit"
             {if !$product.add_to_cart_url}
               disabled
             {/if}
          >
-            <i class="material-icons me-1" aria-hidden="true">&#xE547;</i>
             {l s='Add to cart' d='Shop.Theme.Actions'}
           </button>
         </div>
 
-        {hook h='displayProductActions' product=$product}
       </div>
     {/block}
 
-    {block name='product_minimal_quantity'}
+    {block name='product_minimal_quantity' hide}
       <p class="product__minimal-quantity product-minimal-quantity js-product-minimal-quantity d-flex align-items-center mt-3 mt-md-0">
         {if $product.minimal_quantity> 1}
           <i class="material-icons me-2" aria-hidden="true">&#xE88F;</i>

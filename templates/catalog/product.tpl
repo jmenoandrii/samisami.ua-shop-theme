@@ -103,41 +103,62 @@
   <div class="{$componentName}-bottom">
     {block name='product_tabs'}
         <ul class="product-tabs">
+          {if $product.description}
+            <li class="product-tabs__item">
+              <a class="product-tabs__link" data-id="product-description">{l s='Product Details' d='Shop.Theme.Catalog'}</a>
+            </li>
+          {/if}
+          {if $product.grouped_features}
+            <li class="product-tabs__item">
+              <a class="product-tabs__link" data-id="product-features">{l s='Data sheet' d='Shop.Theme.Catalog'}</a>
+            </li>
+          {/if}
           <li class="product-tabs__item">
-            <a class="product-tabs__link">{l s='Product Details' d='Shop.Theme.Catalog'}</a>
-          </li>
-          <li class="product-tabs__item">
-            <a class="product-tabs__link">{l s='Data sheet' d='Shop.Theme.Catalog'}</a>
-          </li>
-          <li class="product-tabs__item">
-            <a class="product-tabs__link">{l s='Comments' d='Modules.Productcomments.Shop'}</a>
+            <a class="product-tabs__link" data-id="product-comments">{l s='Comments' d='Modules.Productcomments.Shop'}</a>
           </li>
 
         </ul>
-        <div class="product__infos accordion accordion-flush" id="product-infos-accordion">
+        <div class="product__infos" id="product-infos-accordion">
 
           {block name='product_description'}
             {if $product.description}
-              <div class="info accordion-item" id="description">
-                <h2 class="info__title accordion-header" id="product-description-heading">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product-description-collapse" aria-expanded="true" aria-controls="product-description-collapse">
-                    {l s='Description' d='Shop.Theme.Catalog'}
-                  </button>
-                </h2>
-                <div id="product-description-collapse" class="info__content accordion-collapse collapse show" data-bs-parent="#product-infos-accordion" aria-labelledby="product-description-heading">
-                  <div class="product__description accordion-body rich-text">
-                    {$product.description nofilter}
-                  </div>
-                </div>
+              <div id="product-description" class="product-tabs__content product-description rich-text">
+                {$product.description nofilter}
               </div>
             {/if}
           {/block}
 
-          {block name='product_details'}
+          {block name='product_features'}
+            {if $product.grouped_features}
+              <div id="product-features" class="product-tabs__content product-features">
+                <ul class="product-features__details">
+                  {foreach from=$product.grouped_features item=feature}
+                    <li class="detail">
+                      <div class="detail__left">
+                        <span class="detail__title">{$feature.name}</span>
+                      </div>
+
+                      <div class="detail__right">
+                        <span>{$feature.value|escape:'htmlall'|nl2br nofilter}</span>
+                      </div>
+                    </li>
+                  {/foreach}
+                </ul>
+              </div>
+            {/if}
+          {/block}
+
+          {block name='product_footer'}
+            <div id="product-comments" class="product-tabs__content product-comments">
+              {hook h='displayFooterProduct' product=$product category=$category}
+            </div>
+          {/block}
+
+          {block name='product_details' hide}
             {include file='catalog/_partials/product-details.tpl'}
           {/block}
 
-          {block name='product_attachments'}
+          {block name='product_attachments' hide}
             {if $product.attachments}
               <div class="info accordion-item" id="attachments">
                 <h2 class="info__title accordion-header" id="product-attachments-heading">
@@ -187,10 +208,6 @@
     {if $accessories}
       {include file='catalog/_partials/product-accessories.tpl'}
     {/if}
-  {/block}
-
-  {block name='product_footer'}
-    {hook h='displayFooterProduct' product=$product category=$category}
   {/block}
 
   {block name='page_footer_container'}

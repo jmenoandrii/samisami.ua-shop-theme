@@ -15733,6 +15733,54 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
   detectQuantityChange();
+  const initProductTabs = () => {
+    const tabsContainer = document.querySelector(".product-tabs");
+    if (!tabsContainer)
+      return;
+    const tabLinks = tabsContainer.querySelectorAll(".product-tabs__link");
+    const tabContents = document.querySelectorAll(".product-tabs__content");
+    const firstTabLink = tabsContainer.querySelector(".product-tabs__item:first-child .product-tabs__link");
+    if (firstTabLink) {
+      firstTabLink.classList.add("active");
+      const firstTabId = firstTabLink.getAttribute("data-id");
+      if (firstTabId) {
+        const firstContent = document.getElementById(firstTabId);
+        if (firstContent) {
+          firstContent.classList.remove("hide");
+        }
+      }
+    }
+    tabContents.forEach((content) => {
+      const contentId = content.getAttribute("id");
+      const isActive = firstTabLink && firstTabLink.getAttribute("data-id") === contentId;
+      if (!isActive) {
+        content.classList.add("hide");
+      }
+    });
+    tabLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const clickedLink = event.target;
+        const tabId = clickedLink.getAttribute("data-id");
+        tabLinks.forEach((tab) => {
+          tab.classList.remove("active");
+        });
+        clickedLink.classList.add("active");
+        tabContents.forEach((content) => {
+          content.classList.add("hide");
+        });
+        if (tabId) {
+          const activeContent = document.getElementById(tabId);
+          if (activeContent) {
+            activeContent.classList.remove("hide");
+          }
+        }
+      });
+    });
+  };
+  initProductTabs();
+  prestashop.on(events.updatedProduct, initProductTabs);
+  prestashop.on(events.quickviewOpened, initProductTabs);
 });
 
 
@@ -16272,7 +16320,7 @@ __webpack_require__.r(__webpack_exports__);
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1770644928507
+        // 1770668893034
         var cssReload = __webpack_require__("./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {});
         // only invalidate when locals change
         if (
@@ -16388,7 +16436,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f858ddd4c1fc1d247f5b")
+/******/ 		__webpack_require__.h = () => ("b71ae961daf3463f9e4c")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

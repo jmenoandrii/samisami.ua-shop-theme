@@ -131,4 +131,74 @@ export default () => {
 
   // Call the function to start listening for quantity changes
   detectQuantityChange();
+
+  // Ініціалізація табів продукту
+  const initProductTabs = () => {
+    const tabsContainer = document.querySelector('.product-tabs');
+    
+    if (!tabsContainer) return;
+
+    const tabLinks = tabsContainer.querySelectorAll('.product-tabs__link');
+    const tabContents = document.querySelectorAll('.product-tabs__content');
+
+    // Активуємо перший таб при завантаженні
+    const firstTabLink = tabsContainer.querySelector('.product-tabs__item:first-child .product-tabs__link') as HTMLElement;
+    if (firstTabLink) {
+      firstTabLink.classList.add('active');
+      const firstTabId = firstTabLink.getAttribute('data-id');
+      if (firstTabId) {
+        const firstContent = document.getElementById(firstTabId);
+        if (firstContent) {
+          firstContent.classList.remove('hide');
+        }
+      }
+    }
+
+    // Приховуємо всі інші таби крім першого
+    tabContents.forEach((content: Element) => {
+      const contentId = content.getAttribute('id');
+      const isActive = firstTabLink && firstTabLink.getAttribute('data-id') === contentId;
+      if (!isActive) {
+        content.classList.add('hide');
+      }
+    });
+
+    // Обробляємо клік по табам
+    tabLinks.forEach((link: Element) => {
+      link.addEventListener('click', (event: Event) => {
+        event.preventDefault();
+
+        const clickedLink = event.target as HTMLElement;
+        const tabId = clickedLink.getAttribute('data-id');
+
+        // Видаляємо клас active з усіх табів
+        tabLinks.forEach((tab: Element) => {
+          tab.classList.remove('active');
+        });
+
+        // Додаємо клас active на натиснутий таб
+        clickedLink.classList.add('active');
+
+        // Приховуємо всі блоки контенту
+        tabContents.forEach((content: Element) => {
+          content.classList.add('hide');
+        });
+
+        // Показуємо відповідний блок контенту
+        if (tabId) {
+          const activeContent = document.getElementById(tabId);
+          if (activeContent) {
+            activeContent.classList.remove('hide');
+          }
+        }
+      });
+    });
+  };
+
+  // Ініціалізуємо таби при завантаженні
+  initProductTabs();
+  
+  // Переініціалізуємо таби при оновленні товару
+  prestashop.on(events.updatedProduct, initProductTabs);
+  prestashop.on(events.quickviewOpened, initProductTabs);
 };

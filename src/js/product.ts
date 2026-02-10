@@ -140,6 +140,7 @@ export default () => {
 
     const tabLinks = tabsContainer.querySelectorAll('.product-tabs__link');
     const tabContents = document.querySelectorAll('.product-tabs__content');
+    const tabClose = document.querySelectorAll('.product-tabs__close');
 
     // Активуємо перший таб при завантаженні
     const firstTabLink = tabsContainer.querySelector('.product-tabs__item:first-child .product-tabs__link') as HTMLElement;
@@ -163,6 +164,21 @@ export default () => {
       }
     });
 
+    tabClose.forEach((el: Element) => {
+      el.addEventListener('click', (event: Event) => {
+        event.preventDefault();
+        
+        tabLinks.forEach((tab: Element) => {
+          tab.classList.remove('active');
+        });
+        tabContents.forEach((content: Element) => {
+          content.classList.add('hide');
+        });
+
+        el.classList.add('hide');
+      })
+    });
+
     // Обробляємо клік по табам
     tabLinks.forEach((link: Element) => {
       link.addEventListener('click', (event: Event) => {
@@ -174,6 +190,10 @@ export default () => {
         // Видаляємо клас active з усіх табів
         tabLinks.forEach((tab: Element) => {
           tab.classList.remove('active');
+        });
+
+        tabClose.forEach((el: Element) => {
+          el.classList.remove('hide');
         });
 
         // Додаємо клас active на натиснутий таб

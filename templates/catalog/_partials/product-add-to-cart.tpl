@@ -4,62 +4,6 @@
  *}
 <div class="product__add-to-cart product-add-to-cart js-product-add-to-cart">
   {if !$configuration.is_catalog}
-    <div class="mb-3 d-none">
-      {block name='product_availability'}
-        <div id="product-availability" class="product-availability js-product-availability">
-          {if $product.show_availability && $product.availability_message}
-
-            {** First, we prepare the icons and colors we want to use *}
-            {if $product.availability == 'in_stock'}
-              {assign 'availability_icon' 'E5CA'}
-              {assign 'availability_color' 'success'}
-            {elseif $product.availability == 'available'}
-              {assign 'availability_icon' 'E002'}
-              {assign 'availability_color' 'warning'}
-            {elseif $product.availability == 'last_remaining_items'}
-              {assign 'availability_icon' 'E002'}
-              {assign 'availability_color' 'warning'}
-            {else}
-              {assign 'availability_icon' 'E14B'}
-              {assign 'availability_color' 'danger'}
-            {/if}
-
-            {** And render the availability message with icon *}
-            <div class="alert alert-{$availability_color}" role="alert">
-              <div class="d-flex">
-                <div class="me-2">
-                  <i class="material-icons rtl-no-flip">&#x{$availability_icon};</i>
-                </div>
-                <div>
-                  <div>{$product.availability_message}</div>
-                  {if !empty($product.availability_submessage)}
-                    <div class="mt-1"><small>{$product.availability_submessage}</small></div>
-                  {/if}
-                </div>
-              </div>
-            </div>
-          {/if}
-        </div>
-      {/block}
-
-      {block name='product_delivery_times'}
-        {if $product.is_virtual	== 0}
-          {if $product.additional_delivery_times == 1}
-            {if $product.delivery_information}
-              <span class="product__delivery__information">{$product.delivery_information}</span>
-            {/if}
-          {elseif $product.additional_delivery_times == 2}
-            {if $product.quantity> 0}
-              <span class="product__delivery__information">{$product.delivery_in_stock}</span>
-            {* Out of stock message should not be displayed if customer can't order the product. *}
-            {elseif $product.quantity <= 0 && $product.add_to_cart_url}
-              <span class="product__delivery__information">{$product.delivery_out_stock}</span>
-            {/if}
-          {/if}
-        {/if}
-      {/block}
-    </div>
-
     {block name='product_quantity'}
       <div class="product-actions-container">
         <div class="product-actions__quantity quantity-button js-quantity-button">

@@ -45,6 +45,31 @@
 
       {block name='product_prices'}
         {include file='catalog/_partials/product-prices.tpl'}
+
+        {block name='product_availability'}
+          <div id="product-availability" class="product-availability js-product-availability">
+            {if $product.show_availability}
+              <h4 class="product-availability__title">
+                {if $product.quantity >= 1}
+                  <strong>
+                  {l s='In stock' d='Shop.Theme.Catalog'}: 
+                  </strong>
+                  <span>
+                  {if $product.quantity <= Configuration::get('PS_LAST_QTIES')}
+                  {l s='Only %q% left!' sprintf=['%q%' => $product.quantity] d='Shop.Theme.Catalog'}
+                  {else}
+                    {$product.quantity}
+                  {/if}
+                  </span>
+                {elseif $product.availability == 'available'}
+                  <span>{l s='Made to order!' d='Shop.Theme.Catalog'}</span>
+                {else}
+                  <span>{l s='Currently out of stock!' d='Shop.Theme.Catalog'}</span>
+                {/if}
+              </h4>
+            {/if}
+          </div>
+        {/block}
       {/block}
 
       {block name='product_description_short'}
@@ -115,6 +140,11 @@
           {/if}
           <li class="product-tabs__item">
             <a class="product-tabs__link" data-id="product-comments">{l s='Comments' d='Modules.Productcomments.Shop'}</a>
+          </li>
+          <li class="product-tabs__item product-tabs__item-close">
+            <a class="product-tabs__close">
+              <i class="material-symbols-outlined" aria-hidden="true">close</i>
+            </a>
           </li>
 
         </ul>

@@ -23,7 +23,7 @@
               <i class="material-symbols-outlined catalog-open-span catalog-icon" aria-hidden="true">menu</i>
               <i class="material-symbols-outlined catalog-close-span catalog-icon" aria-hidden="true">close</i>
               <span class="catalog-span">
-                {l s='Catalog' d='Admin.Global'}
+                {l s='Catalog' d='Shop.Theme.Global'}
               </span>
             </span>
           </button>

@@ -12,6 +12,8 @@
     --product-discount-price-color: #{$accent-white};
     --product-current-price-color: #{$accent-yellow};
 
+    --product-availability-color: #{$primary-brown};
+
     --product-description-short-color: #{$primary-brown};
     --product-variant-label-color: #{$primary-brown};
 
@@ -94,6 +96,16 @@
           font-weight: bold;
           line-height: normal;
         }
+      }
+    }
+
+    &-availability {
+      margin-bottom: 20px;
+      &__title {
+        font-size: 16px;
+        line-height: normal;
+        margin: 0;
+        color: var(--product-availability-color);
       }
     }
 
@@ -532,6 +544,33 @@
       &__item {
         .product-tabs__link.active {
           color: var(--product-tabs-active-color);
+        }
+      }
+
+      &__item-close {
+        margin-left: auto;
+
+        .product-tabs__close {
+          display: flex;
+          
+          i {
+            transition: color 0.25s ease-out;
+            font-size: 40px;
+            line-height: 40px;
+            font-weight: normal;
+            color: var(--product-tabs-color);
+            cursor: pointer;
+          }
+        } 
+
+        .product-tabs__close.hide {
+          display: none;
+        }
+      }
+
+      &__item-close:hover {
+        i {
+          color: var(--product-tabs-hover-color);
         }
       }
     }

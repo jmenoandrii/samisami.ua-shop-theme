@@ -36,6 +36,8 @@
     --product-wishlist-active-color: #{$primary-brown};
 
     --product-thumbnail-bg-color: #{$primary-black};
+    --product-modal-bg-color: #{$primary-black-modal-bg};
+    --product-modal-shadow-color: #{$accent-yellow};
 
     display: flex;
     flex-direction: row;
@@ -147,6 +149,30 @@
 
         .carousel-control-prev, .carousel-control-next {
           z-index: 15;
+          align-items: center;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          border: 0;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          height: 107px;
+          justify-content: center;
+          margin: 0;
+          padding: 0;
+          pointer-events: all;
+          text-decoration: none;
+          width: 43px;
+          display: none;
+        }
+
+        .carousel-control-prev {
+          left: 15px;
+        }
+
+        .carousel-control-next {
+          right: 15px;
         }
       }
 
@@ -202,6 +228,26 @@
         border-radius: 0;
         box-shadow: none;
         z-index: 10;
+      }
+    }
+
+    &__left {
+      .js-product-images-modal {
+        backdrop-filter: blur(0);
+        -webkit-backdrop-filter: blur(0);
+        background-color: var(--product-modal-bg-color);
+
+        .modal-content {
+          box-shadow: 0px 74px 106.8px -95px var(--product-modal-shadow-color);
+          border: 0;
+          border-radius: 8px;
+        }
+      }
+
+      .carousel {
+        .carousel-control-prev, .carousel-control-next {
+          display: none;
+        }
       }
     }
 

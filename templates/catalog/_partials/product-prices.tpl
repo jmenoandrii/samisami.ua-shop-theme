@@ -29,6 +29,10 @@
               </div>
             {/if}
           {/block}
+
+          {block name='product_reviews'}
+            {hook h='displayProductListReviews' product=$product}
+          {/block}
         </div>
 
         {block name='product_pack_price'}

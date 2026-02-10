@@ -34,18 +34,6 @@ $component-name: footer;
     text-align: center;
   }
 
-  @include media-breakpoint-up(md) {
-    & &__block {
-      margin-bottom: 2.5rem;
-    }
-  }
-
-  @include media-breakpoint-down(md) {
-    & &__block {
-      margin-bottom: 1rem;
-    }
-  }
-
   & &__block {
     &__toggle {
       display: flex;

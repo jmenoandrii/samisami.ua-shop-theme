@@ -7,9 +7,9 @@
 
 <div class="{$componentName} footer_block">
   <form class="{$componentName}__content" action="{$urls.current_url}#blockEmailSubscription_{$hookName}" method="post">
-    <div class="{$componentName}__content-logo">
+    <a href="{$urls.pages.index}" class="{$componentName}__content-logo">
       <img class="logo" src="/modules/ps_emailsubscription/views/img/logo-samisami-footer.svg" alt="">
-    </div>
+    </a>
 
     <div class="{$componentName}__content-title">
       <p id="block-newsletter-label-{$hookName}" class="{$componentName}__content-title-label">{l s='Get our latest news and special sales' d='Shop.Theme.Global'}</p>

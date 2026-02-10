@@ -152,8 +152,8 @@
 
           {block name='product_description'}
             {if $product.description}
-              <div id="product-description" class="product-tabs__content product-description rich-text">
-                {$product.description nofilter}
+              <div id="product-description" class="product-tabs__content product-description">
+                {hook h='displayProductDescription' product=$product}
               </div>
             {/if}
           {/block}

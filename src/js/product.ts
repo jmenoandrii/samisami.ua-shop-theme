@@ -221,4 +221,158 @@ export default () => {
   // Переініціалізуємо таби при оновленні товару
   prestashop.on(events.updatedProduct, initProductTabs);
   prestashop.on(events.quickviewOpened, initProductTabs);
+
+  // Ініціалізація текстурної модалки
+  const initColorVariantTooltip = () => {
+    const colorVariants = document.querySelectorAll('.color-variant');
+    let tooltipTimeout: NodeJS.Timeout | null = null;
+    let currentTooltip: HTMLElement | null = null;
+    let lastVariant: Element | null = null;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+
+    const showTooltip = (bgImage: string, text: string): void => {
+      // Не створюємо новий tooltip якщо він вже існує з тією ж інформацією
+      if (currentTooltip) {
+        return;
+      }
+
+      const tooltip = document.createElement('div');
+      tooltip.className = 'color-variant-tooltip';
+      
+      // Екрануємо текст від XSS
+      const safeText = document.createElement('div');
+      safeText.textContent = text;
+      
+      tooltip.innerHTML = `
+        <div class="color-variant-tooltip__image" style='background-image: ${bgImage}'></div>
+        <div class="color-variant-tooltip__text">${safeText.innerHTML}</div>
+      `;
+
+      // Встановлюємо стилі до додавання до DOM
+      tooltip.style.position = 'fixed';
+      tooltip.style.zIndex = '10000';
+      tooltip.style.visibility = 'hidden';
+
+      document.body.appendChild(tooltip);
+      currentTooltip = tooltip;
+
+      // Розраховуємо позицію з поточною позицією мишки
+      requestAnimationFrame(() => {
+        positionTooltip(lastMouseX, lastMouseY);
+        tooltip.style.visibility = 'visible';
+      });
+    };
+
+    const positionTooltip = (clientX: number, clientY: number): void => {
+      if (!currentTooltip) return;
+
+      const offsetX = -150;
+      const offsetY = -180;
+      let x = clientX + offsetX;
+      let y = clientY + offsetY;
+
+      // Перевіряємо щоб модалка не вийшла за межи вікна
+      const tooltipRect = currentTooltip.getBoundingClientRect();
+      
+      if (x + tooltipRect.width > window.innerWidth) {
+        x = clientX + 15;
+      }
+      
+      if (y < 0) {
+        y = clientY + 15;
+      }
+
+      currentTooltip.style.left = `${x}px`;
+      currentTooltip.style.top = `${y}px`;
+    };
+
+    const hideTooltip = (): void => {
+      if (currentTooltip) {
+        currentTooltip.remove();
+        currentTooltip = null;
+      }
+      if (tooltipTimeout) {
+        clearTimeout(tooltipTimeout);
+        tooltipTimeout = null;
+      }
+    };
+
+    const handleMouseEnter = (variant: Element, event: Event): void => {
+      const colorElement = variant.querySelector('.color') as HTMLElement;
+      const attributeName = variant.querySelector('.attribute-name') as HTMLElement;
+      const mouseEvent = event as MouseEvent;
+
+      if (!colorElement || !attributeName) return;
+
+      lastVariant = variant;
+      lastMouseX = mouseEvent.clientX;
+      lastMouseY = mouseEvent.clientY;
+
+      tooltipTimeout = setTimeout(() => {
+        // Перевіряємо чи мишка ще на цьому елементі
+        if (lastVariant !== variant) return;
+
+        try {
+          const bgImage = window.getComputedStyle(colorElement).backgroundImage;
+          const text = attributeName.textContent?.trim() || '';
+
+          if (bgImage && bgImage !== 'none' && text) {
+            showTooltip(bgImage, text);
+          }
+        } catch (error) {
+          console.warn('Error getting tooltip data:', error);
+        }
+      }, 600);
+    };
+
+    const handleMouseLeave = (): void => {
+      lastVariant = null;
+      hideTooltip();
+    };
+
+    const handleMouseMove = (event: Event): void => {
+      const mouseEvent = event as MouseEvent;
+      lastMouseX = mouseEvent.clientX;
+      lastMouseY = mouseEvent.clientY;
+
+      if (currentTooltip) {
+        positionTooltip(lastMouseX, lastMouseY);
+      }
+    };
+
+    colorVariants.forEach((variant: Element) => {
+      variant.addEventListener('mouseenter', (event) => handleMouseEnter(variant, event));
+      variant.addEventListener('mouseleave', handleMouseLeave);
+      variant.addEventListener('mousemove', handleMouseMove);
+    });
+
+    // Очищуємо при видаленні елемента зі сторінки
+    return () => {
+      hideTooltip();
+      colorVariants.forEach((variant: Element) => {
+        variant.removeEventListener('mouseenter', (event) => handleMouseEnter(variant, event));
+        variant.removeEventListener('mouseleave', handleMouseLeave);
+        variant.removeEventListener('mousemove', handleMouseMove);
+      });
+    };
+  };
+
+  // Зберігаємо функцію очищення
+  let cleanupColorVariantTooltip = initColorVariantTooltip();
+  
+  // Переініціалізуємо при оновленні товару
+  prestashop.on(events.updatedProduct, () => {
+    if (cleanupColorVariantTooltip) {
+      cleanupColorVariantTooltip();
+    }
+    cleanupColorVariantTooltip = initColorVariantTooltip();
+  });
+  
+  prestashop.on(events.quickviewOpened, () => {
+    if (cleanupColorVariantTooltip) {
+      cleanupColorVariantTooltip();
+    }
+    cleanupColorVariantTooltip = initColorVariantTooltip();
+  });
 };

@@ -3,7 +3,7 @@
  * file that was distributed with this source code.
  *}
 
-<section class="new-products mt-3">
+<section class="new-products">
     <div class="container sami-container">
         {include file='components/section-title.tpl' title={l s='New products' d='Shop.Theme.Catalog'} sectionLink=$allNewProductsLink}
         {include file='catalog/_partials/productlist.tpl' products=$products productClass='col-12 col-xs-6 col-lg-4 col-xl-3'}

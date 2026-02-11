@@ -663,6 +663,14 @@
         }
       }
     }
+
+    .product-features {
+      &__details {
+        margin: 0;
+        display: flex;
+        gap: 12px;
+      }
+    }
   }
 }
 

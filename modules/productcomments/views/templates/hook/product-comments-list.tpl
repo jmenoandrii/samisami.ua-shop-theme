@@ -10,19 +10,8 @@
   </script>
 
   <div id="product-comments-list-header">
-    <h2 class="section-title">
-      {l s='Comments' d='Modules.Productcomments.Shop'} ({$nb_comments})
-    </h2>
     {include file='module:productcomments/views/templates/hook/average-grade-stars.tpl' grade=$average_grade showGradeAverage=true showNbComments=false}
   </div>
-
-  {if $post_allowed && $nb_comments != 0}
-    <div id="product-comments-list-btn-group">
-      <button class="w-100 w-sm-auto btn btn-outline-primary post-product-comment">
-        {l s='Write your review' d='Modules.Productcomments.Shop'}
-      </button>
-    </div>
-  {/if}
 
   {include file='module:productcomments/views/templates/hook/product-comment-item-prototype.tpl' assign="comment_prototype"}
   {include file='module:productcomments/views/templates/hook/empty-product-comment.tpl'}

@@ -37,8 +37,7 @@
                   <source 
                     srcset="
                       {$image.bySize.default_md.sources.avif} 320w,
-                      {$image.bySize.product_main.sources.avif} 720w,
-                      {$image.bySize.product_main_2x.sources.avif} 1440w"
+                      {$image.bySize.product_main.sources.avif} 720w"
                     sizes="(min-width: 1300px) 720px, (min-width: 768px) 50vw, 100vw" 
                     type="image/avif"
                   >
@@ -48,8 +47,7 @@
                   <source 
                     srcset="
                       {$image.bySize.default_md.sources.webp} 320w,
-                      {$image.bySize.product_main.sources.webp} 720w,
-                      {$image.bySize.product_main_2x.sources.webp} 1440w"
+                      {$image.bySize.product_main.sources.webp} 720w"
                     sizes="(min-width: 1300px) 720px, (min-width: 768px) 50vw, 100vw" 
                     type="image/webp"
                   >
@@ -59,8 +57,7 @@
                   class="img-fluid"
                   srcset="
                     {$image.bySize.default_md.url} 320w,
-                    {$image.bySize.product_main.url} 720w,
-                    {$image.bySize.product_main_2x.url} 1440w"
+                    {$image.bySize.product_main.url} 720w"
                   sizes="(min-width: 1300px) 720px, (min-width: 768px) 50vw, 100vw" 
                   src="{$image.bySize.product_main.url}" 
                   width="{$image.bySize.product_main.width}"
@@ -139,8 +136,7 @@
         <source 
           srcset="
             {$urls.no_picture_image.bySize.default_md.sources.avif} 320w,
-            {$urls.no_picture_image.bySize.product_main.sources.avif} 720w,
-            {$urls.no_picture_image.bySize.product_main_2x.sources.avif} 1440w"
+            {$urls.no_picture_image.bySize.product_main.sources.avif} 720w"
           sizes="(min-width: 1300px) 720px, (min-width: 768px) 50vw, 100vw" 
           type="image/avif"
         >
@@ -150,8 +146,7 @@
         <source 
           srcset="
             {$urls.no_picture_image.bySize.default_md.sources.webp} 320w,
-            {$urls.no_picture_image.bySize.product_main.sources.webp} 720w,
-            {$urls.no_picture_image.bySize.product_main_2x.sources.webp} 1440w"
+            {$urls.no_picture_image.bySize.product_main.sources.webp} 720w"
           sizes="(min-width: 1300px) 720px, (min-width: 768px) 50vw, 100vw" 
           type="image/webp"
         >
@@ -161,8 +156,7 @@
         class="img-fluid"
         srcset="
           {$urls.no_picture_image.bySize.default_md.url} 320w,
-          {$urls.no_picture_image.bySize.product_main.url} 720w,
-          {$urls.no_picture_image.bySize.product_main_2x.url} 1440w"
+          {$urls.no_picture_image.bySize.product_main.url} 720w"
         sizes="(min-width: 1300px) 720px, (min-width: 768px) 50vw, 100vw" 
         width="{$urls.no_picture_image.bySize.product_main.width}"
         height="{$urls.no_picture_image.bySize.product_main.height}"

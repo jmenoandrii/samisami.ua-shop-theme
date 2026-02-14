@@ -240,6 +240,10 @@
     {/if}
   {/block}
 
+  {block name='product_randomproducts'}
+    {hook h='displayRandomProducts' product=$product}
+  {/block}
+
   {block name='page_footer_container'}
     {block name='page_footer'}
     {/block}

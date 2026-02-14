@@ -15,7 +15,6 @@
         </div>
 
         <div class="{$headerTopName}__right d-none">
-          {hook h='displayNav2'}
         </div>
       </div>
     </div>

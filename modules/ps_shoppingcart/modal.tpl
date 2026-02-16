@@ -4,14 +4,17 @@
  *}
 
 <div id="blockcart-modal" class="blockcart-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-fullscreen-sm-down" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <p class="h4 modal-title mb-0" id="myModalLabel">
-          <i class="material-icons me-1" aria-hidden="true">&#xE5CA;</i>
+        <p class="h4 modal-title" id="myModalLabel">
           {l s='Product successfully added to your shopping cart' d='Shop.Theme.Checkout'}
         </p>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
+          <span class="material-symbols-outlined">
+            close
+          </span>
+        </button>
       </div>
       <div class="modal-body">
         <div class="row">

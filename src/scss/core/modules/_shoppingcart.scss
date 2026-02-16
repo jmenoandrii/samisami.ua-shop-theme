@@ -2,38 +2,57 @@ $component-name: blockcart;
 
 .#{$component-name} {
   &-modal {
+    --shoppingcart-modal-bg-color: #{$primary-white};
+
+    --shoppingcart-modal-title-color: #{$primary-brown};
+
+    --shoppingcart-modal-close-color: #{$accent-white};
+    --shoppingcart-modal-hover-close-color: #{$primary-brown};
+
     .modal-dialog {
-      @include media-breakpoint-up(sm) {
-        max-width: 550px;
-      }
-
-      @include media-breakpoint-up(md) {
-        max-width: 750px;
-      }
-
       @include media-breakpoint-up(lg) {
-        max-width: 850px;
+        max-width: 1250px;
+      }
+    }
+
+    .modal-content {
+      border: none;
+      border-radius: 8px;
+      background-color: var(--shoppingcart-modal-bg-color);
+    }
+
+    .modal-header {
+      padding: 40px;
+      border: none;
+
+      .btn-close {
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        color: var(--shoppingcart-modal-close-color);
+        opacity: 1;
+
+        .material-symbols-outlined {
+          font-size: 35px;
+          color: var(--shoppingcart-modal-close-color);
+          transition: color 0.3s ease;
+        }
+      }
+
+      .btn-close:hover {
+        .material-symbols-outlined {
+          color: var(--shoppingcart-modal-hover-close-color);
+        }
       }
     }
 
     .modal-title {
       display: inline-flex;
       align-items: stretch;
-      font-size: calc(1rem + 0.1vw);
 
-      i {
-        font-size: 1.25rem;
-        line-height: 1.25;
-        color: inherit;
-      }
-
-      @include media-breakpoint-up(xl) {
-        font-size: 1.25rem;
-
-        i {
-          font-size: 1.5rem;
-        }
-      }
     }
 
     &__total {

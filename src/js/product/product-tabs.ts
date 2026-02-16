@@ -53,6 +53,6 @@ export function initProductTabs(prestashop: any, events: any) {
     });
   });
 
-  prestashop.on(events.updatedProduct, () => initProductTabs(prestashop, events));
+  //prestashop.on(events.updatedProduct, () => initProductTabs(prestashop, events));
   prestashop.on(events.quickviewOpened, () => initProductTabs(prestashop, events));
 }

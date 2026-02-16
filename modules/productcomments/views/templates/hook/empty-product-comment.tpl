@@ -3,10 +3,9 @@
  * file that was distributed with this source code.
  *}
 
-<div id="empty-product-comment" class="product-comment-list-item py-3">
+<div id="empty-product-comment" class="product-comment-list-item">
   {if $post_allowed}
-    <button class="btn btn-outline-primary btn-with-icon post-product-comment">
-      <i class="material-icons" aria-hidden="true">&#xE3C9;</i>
+    <button class="post-product-comment">
       {l s='Be the first to write your review' d='Modules.Productcomments.Shop'}
     </button>
   {else}

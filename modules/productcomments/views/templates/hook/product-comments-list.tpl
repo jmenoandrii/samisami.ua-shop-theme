@@ -3,7 +3,7 @@
  * file that was distributed with this source code.
  *}
 
-<div class="product-comments-wrapper my-3">
+<div class="product-comments-wrapper">
   <script type="text/javascript">
     var productCommentUpdatePostErrorMessage = '{l|escape:'javascript' s='Sorry, your review appreciation cannot be sent.' d='Modules.Productcomments.Shop'}';
     var productCommentAbuseReportErrorMessage = '{l|escape:'javascript' s='Sorry, your abuse report cannot be sent.' d='Modules.Productcomments.Shop'}';
@@ -11,6 +11,14 @@
 
   <div id="product-comments-list-header">
     {include file='module:productcomments/views/templates/hook/average-grade-stars.tpl' grade=$average_grade showGradeAverage=true showNbComments=false}
+  
+    {if $post_allowed && $nb_comments != 0}
+      <div id="product-comments-list-btn-group">
+        <button class="post-product-comment">
+          {l s='Leave a review' d='Modules.Productcomments.Shop'}
+        </button>
+      </div>
+    {/if}
   </div>
 
   {include file='module:productcomments/views/templates/hook/product-comment-item-prototype.tpl' assign="comment_prototype"}
@@ -29,7 +37,9 @@
         <ul class="pagination justify-content-center">
           {assign var = "prevCount" value = 0}
           <li class="page-item" id="pcl_page_{$prevCount}">
-            <button class="page-link btn prev"><i class="material-icons">chevron_left</i></button>
+            <button class="page-link btn prev">
+              Попередня
+            </button>
           </li>
           {for $pageCount = 1 to $list_total_pages}
             <li class="page-item" id="pcl_page_{$pageCount}">
@@ -38,7 +48,9 @@
           {/for}
           {assign var = "nextCount" value = $list_total_pages + 1}
           <li class="page-item" id="pcl_page_{$nextCount}">
-            <button class="page-link btn next"><i class="material-icons">chevron_right</i></button>
+            <button class="page-link btn next">
+              Наступна
+            </button>
           </li>
         </ul>
       </nav>
